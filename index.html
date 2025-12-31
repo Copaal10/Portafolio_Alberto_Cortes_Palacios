@@ -1,477 +1,2273 @@
-<!DOCTYPE html>
+<!doctype html>
+<!-- Declaración DOCTYPE: Indica que este es un documento HTML5 -->
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio - Alberto Cortés Palacios</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Etiqueta html con atributo lang="es": Define el idioma del documento como español -->
+  <head>
+    <!-- Sección head: Contiene metadatos e información que no se muestra en la página -->
+    <meta charset="utf-8" />
+    <!-- Meta charset: Define la codificación de caracteres como UTF-8 para caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Meta viewport: Hace que el sitio sea responsivo en dispositivos móviles -->
+    <title>Portafolio - Alberto Cortés Palacios</title>
+    <!-- Título de la página: Aparece en la pestaña del navegador -->
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Enlace a Bootstrap: Framework CSS para diseño responsivo y componentes predefinidos -->
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Enlace a FontAwesome: Biblioteca de iconos vectoriales -->
+    <!-- Custom styles -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- Enlace a estilos personalizados: CSS propio del proyecto -->
+  </head>
+  <body>
+    <!-- Cuerpo de la página: Contiene todo el contenido visible -->
 
-</head>
-<body>
+    <!-- NAVBAR -->
+    <!-- Barra de navegación principal del sitio web -->
+    <header class="sticky-top shadow-sm">
+      <!-- Header con posición fija: La barra se queda en la parte superior al hacer scroll -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white py-2">
+        <!-- Navbar de Bootstrap: Barra de navegación responsiva -->
+        <div class="container-fluid align-items-center">
+          <!-- Contenedor fluido: Ocupa todo el ancho disponible -->
+          <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+            <!-- Logo/marca de la navbar: Enlace a la página principal -->
+            <div class="brand-mark">A</div>
+            <!-- Inicial del nombre como logo distintivo -->
+            <div>
+              <div class="fw-bold">Alberto Cortés</div>
+              <!-- Nombre completo en negrita -->
+              <small class="text-muted">Administración · Software · Ciberseguridad</small>
+              <!-- Especialidades profesionales en texto pequeño y gris -->
+            </div>
+          </a>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <h1>Alberto Cortés Palacios</h1>
-    <p>Profesional administrativo y financiero con enfoque en desarrollo de software, procesos ágiles y ciberseguridad.</p>
-    
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <!-- Botón hamburguesa: Aparece en móviles para mostrar/ocultar el menú -->
+            <span class="navbar-toggler-icon"></span>
+            <!-- Icono de las tres líneas horizontales -->
+          </button>
 
-    
-<div class="btn-group">
-  <a href="#Información">📞 Información de Contacto</a>
-  <a href="#perfil">👤 Perfil</a>
-  <a href="#experiencia">💼 Experiencia</a>
-  <a href="#estudios">🎓 Estudios</a>
-  <a href="#certificaciones">📜 Certificaciones</a>
-  <a href="#habilidades">🛠️ Habilidades</a>
-  <a href="#proyectos">🚀 Proyectos</a>
-  <a href="#hobbies">🎯 Hobbies e Intereses</a>
-</div>
-  </header>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <!-- Contenedor colapsable del menú: Se oculta/muestra en móviles -->
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <!-- Lista de navegación: ms-auto alinea a la derecha, centrado verticalmente -->
+              <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+              <!-- Elemento de menú: Enlace a la sección hero/inicio -->
+              <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
+              <!-- Elemento de menú: Enlace a la sección sobre mí -->
+              <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+              <!-- Elemento de menú: Enlace a la sección experiencia -->
+              <li class="nav-item"><a class="nav-link" href="#estudios">Estudios</a></li>
+              <!-- Elemento de menú: Enlace a la sección estudios -->
+              <li class="nav-item"><a class="nav-link" href="#certificaciones">Certificaciones</a></li>
+              <!-- Elemento de menú: Enlace a la sección certificaciones -->
+              <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
+              <!-- Elemento de menú: Enlace a la sección habilidades -->
+              <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+              <!-- Elemento de menú: Enlace a la sección proyectos -->
+              <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
+              <!-- Elemento de menú: Enlace a la sección hobbies -->
+              <li class="nav-item ms-3 d-none d-lg-block">
+                <!-- Elemento especial: Solo visible en desktop (d-none d-lg-block) -->
+                <a class="btn btn-warning btn-sm btn-cta" href="#footer">📞 Contactar</a>
+                <!-- Botón de llamada a la acción: Enlace al footer para contacto -->
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
+    <!-- HERO -->
+    <!-- Sección principal/hero: Primera impresión del sitio web -->
+    <section id="hero" class="hero d-flex align-items-center">
+      <!-- Sección con id para navegación ancla y clases para centrado vertical -->
+      <div class="container">
+        <!-- Contenedor Bootstrap para limitar ancho máximo -->
+        <div class="row align-items-center">
+          <!-- Fila con elementos centrados verticalmente -->
+          <div class="col-lg-6">
+            <!-- Columna izquierda: Ocupa 6/12 columnas en desktop -->
+            <h1 class="display-5 fw-bold hero-title">Alberto Cortés Palacios</h1>
+            <!-- Título principal: Nombre completo con clases de Bootstrap para tamaño grande y negrita -->
+            <p class="lead hero-sub">Profesional administrativo y financiero con enfoque en desarrollo de software, metodologías ágiles y ciberseguridad.</p>
+            <!-- Párrafo descriptivo: Descripción profesional con clase lead para texto destacado -->
+            <div class="d-flex gap-2 mt-4">
+              <!-- Contenedor flexbox para botones con espacio entre ellos -->
+              <a href="#skills" class="btn btn-primary btn-lg btn-animated">Ver Habilidades</a>
+              <!-- Botón primario animado: Enlace a sección de habilidades -->
+              <a href="#footer" class="btn btn-outline-dark btn-lg btn-animated">Contactar</a>
+              <!-- Botón outline animado: Enlace a sección de contacto -->
+            </div>
+          </div>
+          <div class="col-lg-6 text-center d-none d-lg-block">
+            <!-- Columna derecha: Solo visible en desktop, centrada horizontalmente -->
+            <div class="hero-card">
+              <img src="Foto_Alberto.png" alt="foto" class="img-fluid rounded shadow-lg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  
+    <!-- ABOUT -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="section-title">Perfil Profesional</h2>
+            <p>
+              Profesional en Administración de Empresas con formación técnica en Programación de Software y tecnológica en Gestión Bancaria y Entidades Financieras. Experiencia integral en áreas administrativas, financieras, talento humano y control interno, adquirida en organizaciones sin ánimo de lucro, empresas privadas y entidades del Estado. Especializado en gestión de nómina, presupuestos y análisis de cargos, contribuyendo a la estructura organizacional y a la toma de decisiones estratégicas. Actualmente me capacito en ciberseguridad y metodologías ágiles, integrando soluciones digitales seguras y eficientes en entornos administrativos y tecnológicos.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="card shadow-sm border-0">
+              <div class="card-body">
+                <h5 class="card-title">Datos de contacto</h5>
+                <p class="mb-1">📧 cortespalaciosalberto@gmail.com</p>
+                <p class="mb-1">📱 +57 300 345 1840</p>
+                <p class="mb-0">🌍 Bogotá D.C., Colombia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Experiencia Laboral</h2>
+        <div class="timeline">
+          <div class="timeline-wrapper">
+            <!-- Left side: Experience markers in grid -->
+            <div class="timeline-grid">
+              <!-- 2025 - ICBF Supernumerario (Oct-Nov) -->
+              <div class="timeline-item" data-experience="icbf2">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">🏢</div>
+                    <div class="marker-company">ICBF</div>
+                    <div class="marker-role">Supernumerario</div>
+                    <div class="marker-period">2025</div>
+                  </div>
+                </div>
+              </div>
 
-<!-- Contacto -->
-<section id="contacto">
-  <h2 class="section-title toggle-btn">📞 Información de Contacto</h2>
+              <!-- 2025 - Intelcost SCM Professional -->
+              <div class="timeline-item" data-experience="intelcost">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">📦</div>
+                    <div class="marker-company">Intelcost</div>
+                    <div class="marker-role">SCM Professional</div>
+                    <div class="marker-period">2025</div>
+                  </div>
+                </div>
+              </div>
 
-  <div class="item toggle-content">
-    <p>📧 cortespalaciosalberto@gmail.com</p>
-    <p>📱 +57 300 123 4567</p>
-    <p>🌍 Bogotá D.C., Colombia</p>
-    <p>💼 LinkedIn: 
-      <a href="https://www.linkedin.com/in/alberto-cortes-palacios-a4959b397" target="_blank">
-        www.linkedin.com/in/alberto-cortes-palacios-a4959b397
-      </a>
-    </p>
-    <p>💻 GitHub: 
-      <a href="https://github.com/Copaal10" target="_blank">
-        github.com/Copaal10
-      </a>
-    </p>
-  </div>
-</section>
+              <!-- 2025 - ICBF Supernumerario (Ago-Sep) -->
+              <div class="timeline-item" data-experience="icbf1">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">🏢</div>
+                    <div class="marker-company">ICBF</div>
+                    <div class="marker-role">Supernumerario</div>
+                    <div class="marker-period">2025</div>
+                  </div>
+                </div>
+              </div>
 
+              <!-- 2024-2025 - Fundación Pies Descalzos -->
+              <div class="timeline-item" data-experience="pies">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">🦶</div>
+                    <div class="marker-company">Pies Descalzos</div>
+                    <div class="marker-role">Profesional administrativo</div>
+                    <div class="marker-period">2024-25</div>
+                  </div>
+                </div>
+              </div>
 
+              <!-- 2023-2024 - Gente Disponible + Proasistemas -->
+              <div class="timeline-item" data-experience="gente">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">🧮</div>
+                    <div class="marker-company">Helisa</div>
+                    <div class="marker-role">Asistente de procesos</div>
+                    <div class="marker-period">2023-24</div>
+                  </div>
+                </div>
+              </div>
 
-<!-- Perfil -->
-<section id="perfil">
-  <h2 class="section-title toggle-btn">👤 Perfil Profesional</h2>
+              <!-- 2023 - Redes Humanas S.A. -->
+              <div class="timeline-item" data-experience="redes">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">🏥</div>
+                    <div class="marker-company">Cruz Roja</div>
+                    <div class="marker-role">Auxiliar de gestión de datos</div>
+                    <div class="marker-period">2023</div>
+                  </div>
+                </div>
+              </div>
 
-  <div class="item toggle-content">
-    <p>
-      Profesional en Administración de Empresas con formación técnica en Programación de Software y tecnológica en Gestión Bancaria y Entidades Financieras.  
-      Experiencia integral en áreas administrativas, financieras, talento humano y control interno, adquirida en organizaciones sin ánimo de lucro, empresas privadas y entidades del Estado.  
-      Especializado en gestión de nómina, presupuestos y análisis de cargos, contribuyendo a la estructura organizacional y a la toma de decisiones estratégicas.  
-      Actualmente me capacito en ciberseguridad y metodologías ágiles, integrando soluciones digitales seguras y eficientes en entornos administrativos y tecnológicos.
-    </p>
-  </div>
-</section>
+              <!-- 2022 - Catapulta -->
+              <div class="timeline-item" data-experience="catapulta">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">🚀</div>
+                    <div class="marker-company">Catapulta</div>
+                    <div class="marker-role">Asistente de producción</div>
+                    <div class="marker-period">2022</div>
+                  </div>
+                </div>
+              </div>
 
-  <!-- Experiencia -->
-<!-- Experiencia -->
-<section id="experiencia">
-  <h2 class="section-title toggle-btn">💼 Experiencia Laboral</h2>
+              <!-- 2021-2022 - ASIC -->
+              <div class="timeline-item" data-experience="asic">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">🏛️</div>
+                    <div class="marker-company">ASIC</div>
+                    <div class="marker-role">Aprendiz</div>
+                    <div class="marker-period">2021-22</div>
+                  </div>
+                </div>
+              </div>
 
-  <div class="toggle-content">
-    <div class="item">
-      <h3>🏢 ICBF</h3>
-      <p>Supernumerario | <strong>Fechas:</strong> Oct–Nov 2025</p>
-      <ul>
-        <li>Apoyo administrativo en programas de protección infantil.</li>
-        <li>Manejo de documentación y procesos internos.</li>
-        <li>Atención y orientación a usuarios en servicios institucionales.</li>
-      </ul>
-    </div>
+              <!-- 2018-2020 - Rama Judicial -->
+              <div class="timeline-item" data-experience="judicial">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">⚖️</div>
+                    <div class="marker-company">Rama Judicial</div>
+                    <div class="marker-role">Escribiente municipal</div>
+                    <div class="marker-period">2018-20</div>
+                  </div>
+                </div>
+              </div>
 
-    <div class="item">
-      <h3>📦 Intelcost</h3>
-      <p>SCM Professional | <strong>Fechas:</strong> Sep 2025</p>
-      <ul>
-        <li>Gestión de la cadena de suministro y procesos logísticos.</li>
-        <li>Optimización de inventarios y control de costos.</li>
-        <li>Coordinación con proveedores y clientes para garantizar eficiencia.</li>
-      </ul>
-    </div>
+              <!-- 2017-2018 - Expreso Bolivariano -->
+              <div class="timeline-item" data-experience="expreso">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">🚌</div>
+                    <div class="marker-company">Expreso Bolivariano</div>
+                    <div class="marker-role">Auxiliar de ingresos</div>
+                    <div class="marker-period">2017-18</div>
+                  </div>
+                </div>
+              </div>
 
-    <div class="item">
-      <h3>🏢 ICBF</h3>
-      <p>Supernumerario | <strong>Fechas:</strong> Ago–Sep 2025</p>
-      <ul>
-        <li>Apoyo administrativo en programas de protección infantil.</li>
-        <li>Manejo de documentación y procesos internos.</li>
-        <li>Atención y orientación a usuarios en servicios institucionales.</li>
-      </ul>
-    </div>
+              <!-- 2014-2015 - Centaurus -->
+              <div class="timeline-item" data-experience="centaurus">
+                <div class="timeline-marker">
+                  <div class="marker-content">
+                    <div class="marker-icon">📦</div>
+                    <div class="marker-company">Centaurus</div>
+                    <div class="marker-role">Patinador</div>
+                    <div class="marker-period">2014-15</div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-    <div class="item">
-      <h3>🎓 Fundación Pies Descalzos</h3>
-      <p>Profesional administrativo y financiero | <strong>Fechas:</strong> Oct 2024–Mar 2025</p>
-      <ul>
-        <li>Elaboración y control de presupuestos institucionales.</li>
-        <li>Gestión de recursos financieros y reportes contables.</li>
-        <li>Apoyo administrativo en proyectos sociales y educativos.</li>
-      </ul>
-    </div>
+            <!-- Right side: Experience details panel -->
+            <div class="experience-details-panel">
+              <div class="details-content">
+                <div class="details-header">
+                  <div class="details-icon">📦</div>
+                  <div class="details-title">
+                    <h3>Centaurus</h3>
+                    <p class="details-subtitle">Patinador • Abril 2014 - Febrero 2015</p>
+                  </div>
+                </div>
+                <div class="details-body">
+                  <p class="details-description">Mi primer trabajo formal, donde desarrollé habilidades de responsabilidad, puntualidad y trabajo bajo presión. Esta experiencia me enseñó la importancia de la logística urbana y el servicio al cliente.</p>
 
-    <div class="item">
-      <h3>🛠️ Gente Disponible + Proasistemas</h3>
-      <p>Asistente de procesos | <strong>Fechas:</strong> Feb 2023–Oct 2024</p>
-      <ul>
-        <li>Documentación y seguimiento de procedimientos internos.</li>
-        <li>Apoyo en la implementación de mejoras operativas.</li>
-        <li>Coordinación con equipos para garantizar cumplimiento de metas.</li>
-      </ul>
-    </div>
+                  <div class="details-section">
+                    <h5>🔧 Responsabilidades</h5>
+                    <ul>
+                      <li>Entrega eficiente y distribución de documentos y paquetes en tiempos establecidos</li>
+                      <li>Manejo de rutas urbanas garantizando eficiencia, seguridad y puntualidad</li>
+                      <li>Apoyo logístico en tareas operativas de mensajería y distribución</li>
+                      <li>Gestión de entregas especiales y manejo de clientes corporativos</li>
+                      <li>Mantenimiento de estándares de calidad en servicio al cliente</li>
+                    </ul>
+                  </div>
 
-    <div class="item">
-      <h3>📊 Redes Humanas S.A.</h3>
-      <p>Auxiliar de gestión de datos | <strong>Fechas:</strong> Ene 2023</p>
-      <ul>
-        <li>Registro y actualización de información en bases de datos.</li>
-        <li>Generación de reportes para análisis de gestión.</li>
-        <li>Verificación y depuración de datos para asegurar calidad.</li>
-      </ul>
-    </div>
+                  <div class="details-section">
+                    <h5>🏆 Logros</h5>
+                    <ul>
+                      <li>Desarrollo de habilidades de navegación urbana</li>
+                      <li>Aprendizaje de gestión del tiempo bajo presión</li>
+                      <li>Experiencia en atención al cliente directo</li>
+                    </ul>
+                  </div>
 
-    <div class="item">
-      <h3>🎬 Catapulta</h3>
-      <p>Asistente de producción | <strong>Fechas:</strong> Abr–Nov 2022</p>
-      <ul>
-        <li>Coordinación de actividades de producción y logística.</li>
-        <li>Control de inventarios y materiales para proyectos.</li>
-        <li>Apoyo en la ejecución de eventos y campañas.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>🖥️ ASIC</h3>
-      <p>Aprendiz | <strong>Fechas:</strong> Oct 2021–Abr 2022</p>
-      <ul>
-        <li>Apoyo en procesos administrativos y de gestión documental.</li>
-        <li>Aprendizaje y aplicación de normativas internas.</li>
-        <li>Colaboración en proyectos de mejora continua.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>⚖️ Rama Judicial</h3>
-      <p>Escribiente municipal | <strong>Fechas:</strong> Oct 2018–Ene 2020</p>
-      <ul>
-        <li>Redacción y digitación de documentos oficiales y actas judiciales.</li>
-        <li>Organización y archivo físico y digital de expedientes.</li>
-        <li>Apoyo administrativo en trámites internos de la entidad.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>🚌 Expreso Bolivariano S.A.</h3>
-      <p>Auxiliar de ingresos | <strong>Fechas:</strong> Ene 2017–May 2018</p>
-      <ul>
-        <li>Registro y control de ingresos diarios en sistema contable.</li>
-        <li>Manejo de caja y conciliación de valores recibidos.</li>
-        <li>Atención al cliente en procesos de facturación y recaudo.</li>
-      </ul>
-    </div>
-
-    <div class="item">
-      <h3>📦 Centaurus (Temporales + Mensajeros)</h3>
-      <p>Patinador | <strong>Fechas:</strong> Abr 2014–Feb 2015</p>
-      <ul>
-        <li>Entrega y distribución de documentos y paquetes en tiempos establecidos.</li>
-        <li>Manejo de rutas urbanas garantizando eficiencia y seguridad.</li>
-        <li>Apoyo logístico en tareas operativas de mensajería.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- Estudios -->
-<!-- Estudios -->
-<section id="estudios">
-  <h2 class="section-title toggle-btn">🎓 Estudios</h2>
-
-  <div class="toggle-content">
-    <div class="item">
-      <h3>🎓 Politécnico Grancolombiano</h3>
-      <p>Profesional Administración de Empresas | 2019</p>
-    </div>
-
-    <div class="item">
-      <h3>💻 SENA</h3>
-      <p>Técnico en Programación de Software | 2022</p>
-    </div>
-
-    <div class="item">
-      <h3>🏦 SENA</h3>
-      <p>Tecnólogo en Gestión Bancaria y Entidades Financieras | 2013</p>
-    </div>
-
-    <div class="item">
-      <h3>📘 Colegio Fernando V Aragón y Castilla</h3>
-      <p>Bachiller Académico | 2008</p>
-    </div>
-  </div>
-</section>
-<!-- Certificaciones -->
-<!-- Certificaciones -->
-<section id="certificaciones">
-  <h2 class="section-title toggle-btn">📜 Certificaciones</h2>
-
-  <div class="toggle-content">
-    <div class="item">
-      <h3>💻 Generation</h3>
-      <p>Bootcamp Java Full Stack | Oct 2025 – Ene 2026</p>
-    </div>
-
-    <div class="item">
-      <h3>🛡️ Universidad Sergio Arboleda y Colsubsidio</h3>
-      <p>Ciberseguridad y Gestión de Seguridad de la Información | Oct 2025</p>
-    </div>
-
-    <div class="item">
-      <h3>📊 Colsubsidio CET</h3>
-      <p>Fundamentos en Metodologías Ágiles (Scrum, Kanban y Lean) | Jun–Jul 2025</p>
-    </div>
-
-    <div class="item">
-      <h3>☁️ Microsoft</h3>
-      <p>Bootcamp Ciberseguridad Azure | Dic 2022</p>
-    </div>
-
-    <div class="item">
-      <h3>📈 Fundación Universitaria Compensar</h3>
-      <p>Excel Avanzado | 2021</p>
-    </div>
-
-    <div class="item">
-      <h3>🌐 SENA</h3>
-      <p>English Dot Works 4 | 2019</p>
-    </div>
-
-    <div class="item">
-      <h3>🤝 Institución FUTURO</h3>
-      <p>Manejo del Conflicto, Negociación y Trabajo en Equipo | 2018</p>
-    </div>
-
-    <div class="item">
-      <h3>🏦 SENA</h3>
-      <p>SALAFT (Análisis del Sistema de Administración del Riesgo y Lavado de Activos) | 2013</p>
-    </div>
-
-    <div class="item">
-      <h3>🗣️ SENA</h3>
-      <p>Procesos Comunicativos en Inglés (Oral y Escrito) | 2013</p>
-    </div>
-  </div>
-</section>
-
-<!-- Habilidades -->
-<!-- Habilidades -->
-<section id="habilidades">
-  <h2 class="section-title toggle-btn">🛠️ Habilidades</h2>
-
-  <div class="toggle-content">
-    <div class="card-list">
-
-      <div class="card-item">
-        <h3>💻 Técnicas</h3>
-        <p>
-          Programación (Java, Python, HTML, CSS, JavaScript), Git y GitHub, gestión de bases de datos (SQL, MySQL), automatización de procesos, integración de APIs, testing funcional, diseño de interfaces web, ciberseguridad básica (Azure Security), análisis de datos, metodologías ágiles (Scrum, Kanban, Lean).
-        </p>
+                  <div class="details-section">
+                    <h5>💡 Habilidades</h5>
+                    <div class="skills-tags">
+                      <span class="skill-tag">Logística urbana</span>
+                      <span class="skill-tag">Servicio al cliente</span>
+                      <span class="skill-tag">Gestión del tiempo</span>
+                      <span class="skill-tag">Navegación</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="card-item">
-        <h3>📊 Software y Herramientas</h3>
-        <p>
-          Microsoft Office avanzado (Excel, Word, PowerPoint, Outlook, Access, Visio), Power BI, Trello, Jira, Visual Studio Code, Eclipse, Postman, herramientas BPM, sistemas contables (Helisa), software de auditoría (Auditbrain), plataformas de gestión documental, entornos de colaboración en la nube.
-        </p>
-      </div>
+      <style>
+/* Timeline styles */
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 40px 0;
+  padding: 20px 0;
+}
 
-      <div class="card-item">
-        <h3>🛡️ Auditoría y Control</h3>
-        <p>
-          Habilidades en auditoría interna y externa, control presupuestal, análisis de riesgos, revisión de procesos administrativos y financieros, elaboración de informes de auditoría, cumplimiento normativo, gestión de calidad y mejora continua.
-        </p>
-      </div>
+.timeline-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
 
-      <div class="card-item">
-        <h3>🤝 Blandas</h3>
-        <p>
-          Liderazgo colaborativo, comunicación asertiva, pensamiento crítico, resolución de problemas, trabajo en equipo, gestión del tiempo, adaptabilidad al cambio, negociación, empatía profesional, manejo del conflicto, orientación a resultados, proactividad, mentoría a equipos junior, organización y planificación estratégica.
-        </p>
-      </div>
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 
-      <div class="card-item">
-        <h3>👥 Gestión de Personal</h3>
-        <p>
-          Manejo de equipos de trabajo, coordinación de actividades, capacitación y acompañamiento de colaboradores, análisis de perfiles de cargo, evaluación de desempeño, gestión de nómina y seguridad social, fortalecimiento del clima organizacional.
-        </p>
-      </div>
+.timeline-item {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-      <div class="card-item">
-        <h3>🌐 Idiomas</h3>
-        <p>
-          Español (nativo), Inglés (intermedio – lectura técnica, escritura profesional, conversación funcional).
-        </p>
-      </div>
+.timeline-item.active .timeline-marker {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(255, 212, 102, 0.8);
+}
 
-    </div>
-  </div>
-</section>
+.timeline-item.selected .timeline-marker {
+  transform: scale(1.15);
+  box-shadow: 0 15px 35px rgba(255, 212, 102, 1);
+  border-color: var(--accent);
+}
 
-<!-- Proyectos -->
-<!-- Proyectos -->
-<section id="proyectos">
-  <h2 class="section-title toggle-btn">🚀 Proyectos Relevantes</h2>
+.timeline-marker {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), #ff9f1c);
+  border: 5px solid #fff;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
 
-  <div class="toggle-content">
-    <div class="card-list">
+.marker-content {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  padding: 8px;
+}
 
-      <div class="card-item">
-        <h3>🔧 Automatización en ASIC</h3>
-        <p>Desarrollo de herramienta que redujo el tiempo de ejecución en procesos internos en un 15%.</p>
-      </div>
+.marker-icon {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
 
-      <div class="card-item">
-        <h3>📂 Optimización en Proasistemas Helisa</h3>
-        <p>Implementación de mejoras que redujeron tiempos de respuesta en un 20%.</p>
-      </div>
+.marker-company {
+  font-size: 0.75rem;
+  line-height: 1.1;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
 
-      <div class="card-item">
-        <h3>📑 Estandarización documental en Fundación Pies Descalzos</h3>
-        <p>Mejora de la trazabilidad administrativa para más de 80 colaboradores.</p>
-      </div>
+.marker-role {
+  font-size: 0.65rem;
+  line-height: 1.1;
+  margin-bottom: 2px;
+  opacity: 0.9;
+  font-weight: 500;
+}
 
-      <div class="card-item">
-        <h3>🛡️ Proyecto de Ciberseguridad en Azure</h3>
-        <p>Configuración de entornos seguros y monitoreo de accesos críticos en sistemas institucionales.</p>
-      </div>
+.marker-period {
+  font-size: 0.6rem;
+  opacity: 0.8;
+  line-height: 1;
+  font-weight: 600;
+}
 
-      <div class="card-item">
-        <h3>📊 Gestión de datos en Redes Humanas</h3>
-        <p>Creación de reportes automatizados que facilitaron la toma de decisiones en gestión de personal.</p>
-      </div>
+/* Experience Details Panel */
+.experience-details-panel {
+  position: sticky;
+  top: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255, 212, 102, 0.2);
+  min-height: 400px;
+}
 
-      <div class="card-item">
-        <h3>🎬 Producción en Catapulta</h3>
-        <p>Coordinación de eventos y campañas con control de inventarios y logística eficiente.</p>
-      </div>
+.experience-details-panel h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transform-origin: left center;
+}
 
-      <div class="card-item">
-        <h3>🏢 Fortalecimiento administrativo en ICBF</h3>
-        <p>Optimización de procesos de atención a usuarios y gestión documental en programas de protección infantil.</p>
-      </div>
+.experience-details-panel .company {
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  transform-origin: left center;
+}
 
-      <div class="card-item">
-        <h3>📦 Proyecto logístico en Intelcost</h3>
-        <p>Implementación de indicadores de desempeño que mejoraron la trazabilidad y redujeron costos en un 12%.</p>
-      </div>
+.experience-details-panel .period {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transform-origin: left center;
+}
 
-      <div class="card-item">
-        <h3>⚖️ Digitalización en Rama Judicial</h3>
-        <p>Modernización de archivos físicos y digitales, mejorando la eficiencia en la gestión de expedientes.</p>
-      </div>
+.experience-details-panel .description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  transform-origin: left center;
+}
 
-      <div class="card-item">
-        <h3>🚌 Optimización de ingresos en Expreso Bolivariano</h3>
-        <p>Automatización de registros contables y conciliación de valores, reduciendo errores en un 18%.</p>
-      </div>
+.experience-details-panel .technologies,
+.experience-details-panel .achievements {
+  margin-top: 20px;
+  transform-origin: left center;
+}
 
-      <div class="card-item">
-        <h3>📦 Proyecto de mensajería en Centaurus</h3>
-        <p>Diseño de rutas urbanas eficientes que mejoraron la entrega de documentos y paquetes en un 10%.</p>
-      </div>
+.experience-details-panel .technologies h4,
+.experience-details-panel .achievements h4 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  transform-origin: left center;
+}
 
-    </div>
-  </div>
-</section>
+.experience-details-panel .tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
 
+.experience-details-panel .tech-item {
+  background: rgba(255, 212, 102, 0.1);
+  color: var(--accent);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transform-origin: center;
+  transition: all 0.2s ease;
+}
 
+.experience-details-panel .tech-item:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
 
+.experience-details-panel li {
+  color: #555;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  transform-origin: left center;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
 
+.experience-details-panel li:nth-child(odd) {
+  animation-delay: 0.1s;
+}
 
-<!-- Hobbies e Intereses -->
-<section id="hobbies">
-  <h2 class="section-title toggle-btn">🎯 Hobbies e Intereses</h2>
+.experience-details-panel li:nth-child(even) {
+  animation-delay: 0.2s;
+}
 
-  <div class="toggle-content">
-    <div class="card-list">
+.details-description {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-weight: bold;
+}
 
-      <!-- Judo -->
-      <div class="card-item">
-        <h3>🥋 Judo</h3>
-        <p>🟫🟫⬛🟫Cinturón marrón, disciplina que me ha enseñado constancia, respeto y autocontrol.</p>
-      </div>
+.details-subtitle {
+  font-size: 1rem;
+  color: #495057;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 
-      <!-- Brazilian Jiu-Jitsu -->
-      <div class="card-item">
-        <h3>🥋 Brazilian Jiu-Jitsu (BJJ)</h3>
-        <p>🟦🟦⬛🟦Cinturón azul, practicante activo y competidor.</p>
-        <ul>
-           <li>🥈 Subcampeón – Abu Dhabi Jiu Jitsu Pro (AJP) 2022–2023</li>
-          <li>🥈 Subcampeón – Abu Dhabi Jiu Jitsu Pro (AJP) 2023–2024</li>  
-        </ul>
-        <p>🥋Instructor de BJJ NOGI – Clase de competidores para <strong>WAC TEAM</strong>.</p>
-      </div>
+.details-section {
+  margin-bottom: 25px;
+}
 
-      <!-- Animales -->
-      <div class="card-item">
-        <h3>🐾 Amor por los Animales</h3>
-        <p>Apasionado por el cuidado y protección de los animales, participando en actividades de bienestar animal.</p>
-      </div>
+.details-section h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-      <!-- Lectura -->
-      <div class="card-item">
-        <h3>📚 Lectura</h3>
-        <p>Interés por libros de desarrollo personal, tecnología y filosofía oriental.</p>
-      </div>
+.details-section h5 i {
+  color: var(--accent);
+}
 
-      <!-- Viajes -->
-      <div class="card-item">
-        <h3>🌍 Viajes</h3>
-        <p>Explorar nuevas culturas y paisajes, buscando experiencias que amplíen mi visión del mundo.</p>
-      </div>
+.details-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-      <!-- Música -->
-      <div class="card-item">
-        <h3>🎶 Música</h3>
-        <p>Disfruto de géneros como rock clásico, jazz y música instrumental para concentración.</p>
-      </div>
+.details-section li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+  line-height: 1.5;
+  font-weight: bold;
+}
 
-      <!-- Deporte y Bienestar -->
-      <div class="card-item">
-        <h3>🏃‍♂️ Deporte y Bienestar</h3>
-        <p>Entrenamiento funcional y actividades al aire libre para mantener equilibrio físico y mental.</p>
-      </div>
+.details-section li:last-child {
+  border-bottom: none;
+}
 
-    </div>
-  </div>
-</section>
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Alberto Cortés Palacios. Todos los derechos reservados.
-  </footer>
+.skill-tag {
+  background: linear-gradient(135deg, var(--accent), #ff9f1c);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
 
+.skill-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 212, 102, 0.3);
+}
 
+/* Responsive timeline */
+@media (max-width: 768px) {
+  .timeline-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
+  .timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
 
+  .timeline-marker {
+    width: 100px;
+    height: 100px;
+  }
 
-<script>
-  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  .marker-icon {
+    font-size: 1.5rem;
+  }
 
-  toggleButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const content = btn.nextElementSibling;
-      content.classList.toggle('show');
-      btn.classList.toggle('active'); // 👈 esta línea activa la flecha
+  .marker-company {
+    font-size: 0.7rem;
+  }
+
+  .marker-role {
+    font-size: 0.6rem;
+  }
+
+  .marker-period {
+    font-size: 0.55rem;
+  }
+
+  .experience-details-panel {
+    position: static;
+    padding: 20px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-marker {
+    width: 80px;
+    height: 80px;
+  }
+
+  .marker-icon {
+    font-size: 1.2rem;
+  }
+
+  .marker-company {
+    font-size: 0.65rem;
+  }
+
+  .marker-role {
+    font-size: 0.55rem;
+  }
+
+  .marker-period {
+    font-size: 0.5rem;
+  }
+}
+      </style>
+
+      <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Funcionalidad independiente de la línea de tiempo de experiencia
+    var experienciaElementosLineaTiempo = document.querySelectorAll('.timeline-item');
+    var experienciaPanelDetalles = document.querySelector('.experience-details-panel');
+
+    if (!experienciaPanelDetalles) {
+        console.error('Panel de detalles de experiencia no encontrado!');
+        return;
+    }
+
+    var experienciaElementoActivo = null;
+
+    // Datos de experiencia con información detallada
+    var experienciaDatosExperiencia = {
+        icbf2: {
+            icon: "🏢",
+            company: "ICBF – Segundo periodo",
+            role: "Supernumerario",
+            period: "Octubre 2025 - Noviembre 2025",
+            description: "Apoyo administrativo en el Instituto Colombiano de Bienestar Familiar, enfocándome en programas de protección infantil y atención a usuarios institucionales.",
+            responsibilities: [
+                "Apoyo administrativo en programas de protección infantil",
+                "Manejo de documentación y procesos internos",
+                "Atención y orientación a usuarios en servicios institucionales"
+            ],
+            achievements: [
+                "Mejora en procesos administrativos internos",
+                "Atención efectiva a usuarios institucionales",
+                "Contribución a programas de protección infantil"
+            ],
+            skills: ["Administración pública", "Protección infantil", "Atención al usuario", "Gestión documental"]
+        },
+        intelcost: {
+            icon: "📦",
+            company: "Intelcost",
+            role: "SCM Professional",
+            period: "Septiembre 2025",
+            description: "Profesional en gestión de la cadena de suministro, optimizando procesos logísticos y control de costos en una empresa de consultoría.",
+            responsibilities: [
+                "Gestión de la cadena de suministro y procesos logísticos",
+                "Optimización de inventarios y control de costos",
+                "Coordinación con proveedores y clientes para garantizar eficiencia"
+            ],
+            achievements: [
+                "Optimización de procesos logísticos",
+                "Reducción de costos operativos",
+                "Mejora en eficiencia de la cadena de suministro"
+            ],
+            skills: ["Cadena de suministro", "Logística", "Control de inventarios", "Gestión de costos"]
+        },
+        icbf1: {
+            icon: "🏢",
+            company: "ICBF – Primer periodo",
+            role: "Supernumerario",
+            period: "Agosto 2025 - Septiembre 2025",
+            description: "Primer periodo como supernumerario en el ICBF, desarrollando habilidades administrativas en protección infantil.",
+            responsibilities: [
+                "Apoyo administrativo en programas de protección infantil",
+                "Manejo de documentación y procesos internos",
+                "Atención y orientación a usuarios en servicios institucionales"
+            ],
+            achievements: [
+                "Desarrollo de habilidades administrativas",
+                "Contribución a procesos institucionales",
+                "Atención especializada a usuarios"
+            ],
+            skills: ["Administración institucional", "Protección infantil", "Gestión documental", "Atención al usuario"]
+        },
+        pies: {
+            icon: "🦶",
+            company: "Fundación Pies Descalzos",
+            role: "Profesional administrativo y financiero",
+            period: "Octubre 2024 - Marzo 2025",
+            description: "Profesional administrativo y financiero en fundación dedicada a proyectos sociales y educativos, manejando presupuestos y reportes contables.",
+            responsibilities: [
+                "Elaboración y control de presupuestos institucionales",
+                "Gestión de recursos financieros y reportes contables",
+                "Apoyo administrativo en proyectos sociales y educativos"
+            ],
+            achievements: [
+                "Control efectivo de presupuestos institucionales",
+                "Gestión financiera eficiente",
+                "Apoyo en proyectos sociales exitosos"
+            ],
+            skills: ["Gestión financiera", "Presupuestos", "Reportes contables", "Administración social"]
+        },
+        gente: {
+            icon: "🧮",
+            company: "Helisa",
+            role: "Asistente de procesos",
+            period: "Febrero 2023 - Octubre 2024",
+            description: "Asistente de procesos en empresa de servicios, enfocándome en documentación, seguimiento de procedimientos y mejoras operativas.",
+            responsibilities: [
+                "Documentación y seguimiento de procedimientos internos",
+                "Apoyo en la implementación de mejoras operativas",
+                "Coordinación con equipos para garantizar cumplimiento de metas"
+            ],
+            achievements: [
+                "Implementación de mejoras operativas",
+                "Cumplimiento de metas institucionales",
+                "Mejora en procedimientos internos"
+            ],
+            skills: ["Gestión de procesos", "Mejoras operativas", "Coordinación de equipos", "Documentación"]
+        },
+        redes: {
+            icon: "🏥",
+            company: "Cruz Roja",
+            role: "Auxiliar de gestión de datos",
+            period: "Enero 2023",
+            description: "Auxiliar en gestión de datos, manejando bases de datos, reportes y verificación de información para análisis de gestión.",
+            responsibilities: [
+                "Registro y actualización de información en bases de datos",
+                "Generación de reportes para análisis de gestión",
+                "Verificación y depuración de datos para asegurar calidad"
+            ],
+            achievements: [
+                "Mejora en calidad de datos",
+                "Generación de reportes precisos",
+                "Optimización de bases de datos"
+            ],
+            skills: ["Gestión de datos", "Bases de datos", "Reportes", "Análisis de datos"]
+        },
+        catapulta: {
+            icon: "🚀",
+            company: "Catapulta",
+            role: "Asistente de producción",
+            period: "Abril 2022 - Noviembre 2022",
+            description: "Asistente de producción en empresa de desarrollo, coordinando actividades de producción, logística y eventos.",
+            responsibilities: [
+                "Coordinación de actividades de producción y logística",
+                "Control de inventarios y materiales para proyectos",
+                "Apoyo en la ejecución de eventos y campañas"
+            ],
+            achievements: [
+                "Coordinación exitosa de proyectos de producción",
+                "Control eficiente de inventarios",
+                "Ejecución efectiva de eventos"
+            ],
+            skills: ["Producción", "Logística", "Control de inventarios", "Gestión de eventos"]
+        },
+        asic: {
+            icon: "🏛️",
+            company: "ASIC",
+            role: "Aprendiz",
+            period: "Octubre 2021 - Abril 2022",
+            description: "Aprendiz en organización administrativa, aprendiendo procesos administrativos, gestión documental y normativas internas.",
+            responsibilities: [
+                "Apoyo en procesos administrativos y de gestión documental",
+                "Aprendizaje y aplicación de normativas internas de la organización",
+                "Colaboración en proyectos de mejora continua"
+            ],
+            achievements: [
+                "Aprendizaje de normativas administrativas",
+                "Contribución a proyectos de mejora",
+                "Desarrollo de habilidades administrativas"
+            ],
+            skills: ["Administración", "Gestión documental", "Normativas", "Mejora continua"]
+        },
+        judicial: {
+            icon: "⚖️",
+            company: "Dirección Seccional + Dirección Ejecutiva Rama Judicial",
+            role: "Escribiente municipal",
+            period: "Octubre 2018 - Enero 2020",
+            description: "Escribiente municipal en rama judicial, manejando documentación oficial, actas judiciales y archivos.",
+            responsibilities: [
+                "Redacción y digitación de documentos oficiales y actas judiciales",
+                "Organización y archivo físico y digital de expedientes",
+                "Apoyo administrativo en trámites internos de la entidad"
+            ],
+            achievements: [
+                "Organización eficiente de expedientes",
+                "Redacción precisa de documentos oficiales",
+                "Manejo confidencial de información judicial"
+            ],
+            skills: ["Documentación jurídica", "Archivo", "Redacción oficial", "Confidencialidad"]
+        },
+        expreso: {
+            icon: "🚌",
+            company: "Expreso Bolivariano S.A.",
+            role: "Auxiliar de ingresos",
+            period: "Enero 2017 - Mayo 2018",
+            description: "Auxiliar de ingresos en empresa de transporte, manejando registro de ingresos, caja y atención al cliente.",
+            responsibilities: [
+                "Registro y control de ingresos diarios en sistema contable",
+                "Manejo de caja y conciliación de valores recibidos",
+                "Atención al cliente en procesos de facturación y recaudo"
+            ],
+            achievements: [
+                "Conciliación precisa de valores",
+                "Manejo responsable de caja",
+                "Atención efectiva al cliente"
+            ],
+            skills: ["Conciliación financiera", "Manejo de caja", "Atención al cliente", "Facturación"]
+        },
+        centaurus: {
+            icon: "📦",
+            company: "Centaurus (Temporales + Mensajeros)",
+            role: "Patinador",
+            period: "Abril 2014 - Febrero 2015",
+            description: "Patinador en empresa de mensajería, entregando documentos y paquetes con eficiencia y seguridad.",
+            responsibilities: [
+                "Entrega y distribución de documentos y paquetes en tiempos establecidos",
+                "Manejo de rutas urbanas garantizando eficiencia y seguridad",
+                "Apoyo logístico en tareas operativas de mensajería"
+            ],
+            achievements: [
+                "Entregas puntuales y seguras",
+                "Optimización de rutas urbanas",
+                "Desarrollo de habilidades logísticas"
+            ],
+            skills: ["Logística urbana", "Entregas", "Rutas", "Seguridad"]
+        }
+    };
+
+    // Función para actualizar el panel de detalles
+    function experienciaActualizarPanelDetalles(claveExperiencia) {
+        const datos = experienciaDatosExperiencia[claveExperiencia];
+        if (!datos) {
+            console.error('No data found for experience:', claveExperiencia);
+            return;
+        }
+
+        // Update existing elements instead of replacing innerHTML
+        const iconEl = experienciaPanelDetalles.querySelector('.details-icon');
+        const titleEl = experienciaPanelDetalles.querySelector('h3');
+        const subtitleEl = experienciaPanelDetalles.querySelector('.details-subtitle');
+        const descriptionEl = experienciaPanelDetalles.querySelector('.details-description');
+        const responsibilitiesUl = experienciaPanelDetalles.querySelector('.details-section:nth-child(1) ul');
+        const achievementsUl = experienciaPanelDetalles.querySelector('.details-section:nth-child(2) ul');
+        const skillsDiv = experienciaPanelDetalles.querySelector('.skills-tags');
+
+        if (iconEl) iconEl.textContent = datos.icon;
+        if (titleEl) titleEl.textContent = datos.company;
+        if (subtitleEl) subtitleEl.textContent = `${datos.role} • ${datos.period}`;
+        if (descriptionEl) descriptionEl.textContent = datos.description;
+        if (responsibilitiesUl) responsibilitiesUl.innerHTML = datos.responsibilities.map(resp => `<li>${resp}</li>`).join('');
+        if (achievementsUl) achievementsUl.innerHTML = datos.achievements.map(ach => `<li>${ach}</li>`).join('');
+        if (skillsDiv) skillsDiv.innerHTML = datos.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('');
+
+        // Animación de entrada con efectos mejorados
+        const experienciaAnimacionLineaTiempo = gsap.timeline();
+
+        // Initial fade in
+        experienciaAnimacionLineaTiempo.fromTo(experienciaPanelDetalles,
+            { opacity: 0, y: 30, scale: 0.95 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'back.out(1.7)' }
+        );
+
+        // Animate title with bounce effect
+        experienciaAnimacionLineaTiempo.fromTo(experienciaPanelDetalles.querySelector('h3'),
+            { opacity: 0, x: -20, rotation: -5 },
+            { opacity: 1, x: 0, rotation: 0, duration: 0.3, ease: 'power2.out' },
+            '-=0.2'
+        );
+
+        // Animate subtitle
+        experienciaAnimacionLineaTiempo.fromTo(experienciaPanelDetalles.querySelector('.details-subtitle'),
+            { opacity: 0, y: 15 },
+            { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' },
+            '-=0.2'
+        );
+
+        // Animate description
+        experienciaAnimacionLineaTiempo.fromTo(experienciaPanelDetalles.querySelector('.details-description'),
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' },
+            '-=0.1'
+        );
+
+        // Animate sections with stagger
+        const secciones = experienciaPanelDetalles.querySelectorAll('.details-section');
+        experienciaAnimacionLineaTiempo.fromTo(secciones,
+            { opacity: 0, x: -30, scale: 0.9 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.4, stagger: 0.15, ease: 'power2.out' },
+            '-=0.2'
+        );
+
+        // Animate list items with stagger and bounce effect
+        const elementosLista = experienciaPanelDetalles.querySelectorAll('li');
+        experienciaAnimacionLineaTiempo.fromTo(elementosLista,
+            { opacity: 0, x: -20, scale: 0.8 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.4, stagger: 0.08, ease: 'back.out(1.3)' },
+            '-=0.3'
+        );
+
+        // Animate skill tags with elastic effect
+        const etiquetasHabilidades = experienciaPanelDetalles.querySelectorAll('.skill-tag');
+        experienciaAnimacionLineaTiempo.fromTo(etiquetasHabilidades,
+            { opacity: 0, scale: 0, rotation: -180 },
+            { opacity: 1, scale: 1, rotation: 0, duration: 0.5, stagger: 0.1, ease: 'elastic.out(1, 0.3)' },
+            '-=0.4'
+        );
+
+        // Add a subtle continuous animation to skill tags
+        gsap.to(etiquetasHabilidades, {
+            y: 'random(-2, 2)',
+            duration: 'random(2, 3)',
+            ease: 'power1.inOut',
+            stagger: 0.1,
+            repeat: -1,
+            yoyo: true
+        });
+    }
+
+    // Función para ocultar el panel de detalles
+    function experienciaOcultarPanelDetalles() {
+        gsap.to(experienciaPanelDetalles, {
+            opacity: 0,
+            scale: 0.9,
+            rotationY: 15,
+            duration: 0.4,
+            ease: 'back.in(1.2)',
+            onComplete: () => {
+                experienciaPanelDetalles.style.display = 'none';
+            }
+        });
+    }
+
+    // Add hover and click functionality to timeline items
+    experienciaElementosLineaTiempo.forEach((item, index) => {
+        const experienceKey = item.getAttribute('data-experience');
+
+        // Make sure the item is clickable
+        item.style.cursor = 'pointer';
+
+        // Click functionality - makes item stay active
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Add click animation to the marker
+            const marker = item.querySelector('.timeline-marker');
+            gsap.to(marker, {
+                scale: 1.2,
+                duration: 0.1,
+                yoyo: true,
+                repeat: 1,
+                ease: 'power2.inOut'
+            });
+
+            // Remove selected state from all items
+            experienciaElementosLineaTiempo.forEach(i => {
+                i.classList.remove('selected', 'active');
+            });
+
+            // Add selected state to clicked item
+            item.classList.add('selected', 'active');
+            experienciaElementoActivo = item;
+
+            // Show details and keep them visible
+            experienciaPanelDetalles.style.display = 'block';
+
+            // Add entrance animation for the panel
+            gsap.fromTo(experienciaPanelDetalles,
+                { opacity: 0, scale: 0.8, rotationY: -15 },
+                { opacity: 1, scale: 1, rotationY: 0, duration: 0.5, ease: 'back.out(1.2)' }
+            );
+
+            experienciaActualizarPanelDetalles(experienceKey);
+        });
+
+        // Hover functionality - visual effect only
+        item.addEventListener('mouseenter', () => {
+            if (!experienciaElementoActivo || experienciaElementoActivo !== item) {
+                // Add hover glow effect to marker
+                const marker = item.querySelector('.timeline-marker');
+                gsap.to(marker, {
+                    boxShadow: '0 8px 25px rgba(255, 212, 102, 0.6)',
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+
+                if (!item.classList.contains('selected')) {
+                    item.classList.add('active');
+                }
+            }
+        });
+
+        item.addEventListener('mouseleave', () => {
+            // Remove hover effect
+            const marker = item.querySelector('.timeline-marker');
+            if (!item.classList.contains('selected')) {
+                gsap.to(marker, {
+                    boxShadow: '0 6px 20px rgba(0,0,0,0.15)',
+                    scale: 1,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
+            }
+
+            // Remove active class if not selected
+            if (!item.classList.contains('selected')) {
+                item.classList.remove('active');
+            }
+
+            // Hide panel only if no item is selected and no item is being hovered
+            setTimeout(() => {
+                if (!experienciaElementoActivo && !document.querySelector('.timeline-item:hover')) {
+                    experienciaOcultarPanelDetalles();
+                }
+            }, 100);
+        });
     });
-  });
-</script>
+
+    // Hide details when mouse leaves the entire timeline area (only if no item is selected)
+    document.querySelector('.timeline').addEventListener('mouseleave', () => {
+        if (!experienciaElementoActivo) {
+            setTimeout(() => {
+                if (!document.querySelector('.timeline-item:hover')) {
+                    experienciaElementosLineaTiempo.forEach(i => i.classList.remove('active'));
+                    experienciaOcultarPanelDetalles();
+                }
+            }, 100);
+        }
+    });
+
+    // Initialize with first experience selected
+    if (experienciaElementosLineaTiempo.length > 0) {
+        const firstItem = experienciaElementosLineaTiempo[0];
+        const firstExperienceKey = firstItem.getAttribute('data-experience');
+
+        firstItem.classList.add('active', 'selected');
+        experienciaElementoActivo = firstItem;
+        experienciaPanelDetalles.style.display = 'block';
+
+        // Add spectacular entrance animation for first load
+        gsap.set(experienciaPanelDetalles, { opacity: 0, scale: 0.5, rotationY: -45 });
+        gsap.to(experienciaPanelDetalles, {
+            opacity: 1,
+            scale: 1,
+            rotationY: 0,
+            duration: 0.8,
+            ease: 'back.out(1.7)',
+            onComplete: () => {
+                experienciaActualizarPanelDetalles(firstExperienceKey);
+            }
+        });
+
+        // Add entrance animation for timeline markers
+        gsap.fromTo(experienciaElementosLineaTiempo,
+            { opacity: 0, y: 50, scale: 0.8 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.6, stagger: 0.1, ease: 'back.out(1.5)', delay: 0.3 }
+        );
+    }
+});
+      </script>
+    </section>
+
+    <!-- ESTUDIOS -->
+    <section id="estudios" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title">Estudios</h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4">
+            <div class="diploma-card">
+              <!-- Bordes ornamentales superiores -->
+              <div class="diploma-border-top">
+                <div class="diploma-ornament-left"></div>
+                <div class="diploma-ornament-center"></div>
+                <div class="diploma-ornament-right"></div>
+              </div>
+
+              <!-- Sello oficial -->
+              <div class="diploma-seal-container">
+                <div class="diploma-seal">
+                  <i class="fas fa-code"></i>
+                </div>
+              </div>
+
+              <!-- Contenido principal -->
+              <div class="diploma-content">
+                <div class="diploma-title">Técnico en Programación de Software</div>
+                <div class="diploma-institution">Servicio Nacional de Aprendizaje</div>
+                <div class="diploma-year">2022</div>
+                <div class="diploma-type">Técnico</div>
+              </div>
+
+              <!-- Bordes ornamentales inferiores -->
+              <div class="diploma-border-bottom">
+                <div class="diploma-ornament-left"></div>
+                <div class="diploma-ornament-center"></div>
+                <div class="diploma-ornament-right"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="diploma-card">
+              <!-- Bordes ornamentales superiores -->
+              <div class="diploma-border-top">
+                <div class="diploma-ornament-left"></div>
+                <div class="diploma-ornament-center"></div>
+                <div class="diploma-ornament-right"></div>
+              </div>
+
+              <!-- Sello oficial -->
+              <div class="diploma-seal-container">
+                <div class="diploma-seal">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+              </div>
+
+              <!-- Contenido principal -->
+              <div class="diploma-content">
+                <div class="diploma-title">Profesional en Administración de Empresas</div>
+                <div class="diploma-institution">Politécnico Grancolombiano</div>
+                <div class="diploma-year">2019</div>
+                <div class="diploma-type">Profesional</div>
+              </div>
+
+              <!-- Bordes ornamentales inferiores -->
+              <div class="diploma-border-bottom">
+                <div class="diploma-ornament-left"></div>
+                <div class="diploma-ornament-center"></div>
+                <div class="diploma-ornament-right"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="diploma-card">
+              <!-- Bordes ornamentales superiores -->
+              <div class="diploma-border-top">
+                <div class="diploma-ornament-left"></div>
+                <div class="diploma-ornament-center"></div>
+                <div class="diploma-ornament-right"></div>
+              </div>
+
+              <!-- Sello oficial -->
+              <div class="diploma-seal-container">
+                <div class="diploma-seal">
+                  <i class="fas fa-landmark"></i>
+                </div>
+              </div>
+
+              <!-- Contenido principal -->
+              <div class="diploma-content">
+                <div class="diploma-title">Tecnólogo en Gestión Bancaria y Entidades Financieras</div>
+                <div class="diploma-institution">Servicio Nacional de Aprendizaje</div>
+                <div class="diploma-year">2013</div>
+                <div class="diploma-type">Tecnólogo</div>
+              </div>
+
+              <!-- Bordes ornamentales inferiores -->
+              <div class="diploma-border-bottom">
+                <div class="diploma-ornament-left"></div>
+                <div class="diploma-ornament-center"></div>
+                <div class="diploma-ornament-right"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICACIONES -->
+ <section id="certificaciones" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Certificaciones</h2>
+    <div id="certificationsCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <!-- Slide 1 (2025) -->
+        <div class="carousel-item active">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="certification-card">
+                <div class="certification-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="certification-content">
+                  <h5 class="certification-title">Bootcamp Java Full Stack</h5>
+                  <p class="certification-institution">Generation</p>
+                  <p class="certification-period">Oct 2025 – Ene 2026</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certification-card">
+                <div class="certification-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="certification-content">
+                  <h5 class="certification-title">Curso en Ciberseguridad y Gestión de Seguridad de la Información</h5>
+                  <p class="certification-institution">Universidad Sergio Arboleda y Colsubsidio</p>
+                  <p class="certification-period">Oct 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certification-card">
+                <div class="certification-icon">
+                  <i class="fas fa-tasks"></i>
+                </div>
+                <div class="certification-content">
+                  <h5 class="certification-title">Curso de Fundamentos en Metodologías Ágiles (Scrum, Kanban y Lean)</h5>
+                  <p class="certification-institution">Corporación Colsubsidio / CET</p>
+                  <p class="certification-period">Jun – Jul 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 (2022–2019) -->
+        <div class="carousel-item">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="certification-card">
+                <div class="certification-icon">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div class="certification-content">
+                  <h5 class="certification-title">Bootcamp Ciberseguridad Azure</h5>
+                  <p class="certification-institution">Certificación independiente</p>
+                  <p class="certification-period">Dic 2022</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certification-card">
+                <div class="certification-icon">
+                  <i class="fas fa-table"></i>
+                </div>
+                <div class="certification-content">
+                  <h5 class="certification-title">Excel Avanzado</h5>
+                  <p class="certification-institution">Fundación Universitaria Compensar</p>
+                  <p class="certification-period">2021</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certification-card">
+                <div class="certification-icon">
+                  <i class="fas fa-language"></i>
+                </div>
+                <div class="certification-content">
+                  <h5 class="certification-title">English Dot Works 4</h5>
+                  <p class="certification-institution">SENA</p>
+                  <p class="certification-period">2019</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 (2018–2013) -->
+        <div class="carousel-item">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="certification-card">
+                <div class="certification-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="certification-content">
+                  <h5 class="certification-title">Manejo del Conflicto, Negociación y Trabajo en Equipo</h5>
+                  <p class="certification-institution">Institución Educación FUTURO</p>
+                  <p class="certification-period">2018</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certification-card">
+                <div class="certification-icon">
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <div class="certification-content">
+                  <h5 class="certification-title">Análisis del Sistema de Administración del Riesgo y Lavado de Activos (SALAFT)</h5>
+                  <p class="certification-institution">SENA</p>
+                  <p class="certification-period">2013</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="certification-card">
+                <div class="certification-icon">
+                  <i class="fas fa-comment-dots"></i>
+                </div>
+                <div class="certification-content">
+                  <h5 class="certification-title">Desarrollo de Procesos Comunicativos en inglés (Oral y Escrito)</h5>
+                  <p class="certification-institution">SENA</p>
+                  <p class="certification-period">2013</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#certificationsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#certificationsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+      <!-- Indicadores -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#certificationsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#certificationsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#certificationsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
 
 
-</body>
+
+
+
+    <!-- HABILIDADES -->
+    <section id="skills" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Habilidades</h2>
+
+        <div class="skills-cards-container">
+          <!-- Card 1: Técnicas y Profesionales -->
+          <div class="skill-card-large">
+            <div class="skill-card-header">
+              <div class="skill-card-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Habilidades Técnicas & Profesionales</h3>
+            </div>
+            <div class="skill-card-content">
+              <div class="skill-categories">
+                <div class="skill-category">
+                  <h5><i class="fas fa-shield-alt"></i> Auditoría y Control</h5>
+                  <ul>
+                    <li>Auditoría interna y externa de procesos administrativos</li>
+                    <li>Control presupuestal y análisis financiero</li>
+                    <li>Evaluación y gestión de riesgos operativos</li>
+                    <li>Revisión de cumplimiento normativo y regulatorio</li>
+                    <li>Elaboración de informes de auditoría y recomendaciones</li>
+                    <li>Implementación de controles internos efectivos</li>
+                  </ul>
+                </div>
+
+                <div class="skill-category">
+                  <h5><i class="fas fa-code"></i> Desarrollo y Programación</h5>
+                  <ul>
+                    <li>Programación (Java, Python, HTML, CSS, JavaScript)</li>
+                    <li>Gestión de bases de datos (SQL, MySQL)</li>
+                    <li>Desarrollo de APIs y integración de sistemas</li>
+                    <li>Testing funcional y automatización</li>
+                    <li>Diseño de interfaces web responsivas</li>
+                    <li>Metodologías ágiles (Scrum, Kanban, Lean)</li>
+                  </ul>
+                </div>
+
+                <div class="skill-category">
+                  <h5><i class="fas fa-tools"></i> Herramientas Técnicas</h5>
+                  <div class="tools-list">
+                    <span class="tool-item">VS Code</span>
+                    <span class="tool-item">Eclipse</span>
+                    <span class="tool-item">Postman</span>
+                    <span class="tool-item">Git/GitHub</span>
+                    <span class="tool-item">Auditbrain</span>
+                    <span class="tool-item">Excel Avanzado</span>
+                    <span class="tool-item">Power BI</span>
+                    <span class="tool-item">SAP</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Blandas y Personales -->
+          <div class="skill-card-large">
+            <div class="skill-card-header">
+              <div class="skill-card-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Habilidades Blandas & Personales</h3>
+            </div>
+            <div class="skill-card-content">
+              <div class="skill-categories">
+                <div class="skill-category">
+                  <h5><i class="fas fa-user-tie"></i> Liderazgo y Gestión</h5>
+                  <ul>
+                    <li>Dirección y coordinación de equipos de trabajo</li>
+                    <li>Gestión de proyectos y recursos humanos</li>
+                    <li>Toma de decisiones estratégicas</li>
+                    <li>Delegación efectiva de responsabilidades</li>
+                    <li>Motivación y desarrollo de talento</li>
+                  </ul>
+                </div>
+
+                <div class="skill-category">
+                  <h5><i class="fas fa-comments"></i> Comunicación</h5>
+                  <ul>
+                    <li>Comunicación verbal y escrita efectiva</li>
+                    <li>Presentaciones ejecutivas y capacitación</li>
+                    <li>Negociación y resolución de conflictos</li>
+                    <li>Relaciones interpersonales</li>
+                    <li>Adaptabilidad cultural y lingüística</li>
+                  </ul>
+                </div>
+
+                <div class="skill-category">
+                  <h5><i class="fas fa-brain"></i> Competencias Personales</h5>
+                  <ul>
+                    <li>Resolución creativa de problemas</li>
+                    <li>Aprendizaje continuo y autodidacta</li>
+                    <li>Gestión del tiempo y prioridades</li>
+                    <li>Ética profesional y responsabilidad</li>
+                    <li>Trabajo bajo presión y resiliencia</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFTWARE Y HERRAMIENTAS -->
+    <section id="software" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Software y Herramientas</h2>
+
+        <div class="software-showcase">
+          <!-- Categoría Microsoft Office -->
+          <div class="software-category office-category">
+            <div class="category-header">
+              <div class="category-icon office-icon">
+                <i class="fab fa-microsoft"></i>
+              </div>
+              <h3>Microsoft Office</h3>
+            </div>
+            <div class="tools-grid">
+              <div class="tool-card excel-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-file-excel"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Excel</h6>
+                  <span class="tool-level">Avanzado</span>
+                </div>
+              </div>
+
+              <div class="tool-card word-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-file-word"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Word</h6>
+                  <span class="tool-level">Avanzado</span>
+                </div>
+              </div>
+
+              <div class="tool-card powerpoint-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-file-powerpoint"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>PowerPoint</h6>
+                  <span class="tool-level">Avanzado</span>
+                </div>
+              </div>
+
+              <div class="tool-card outlook-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Outlook</h6>
+                  <span class="tool-level">Intermedio</span>
+                </div>
+              </div>
+
+              <div class="tool-card access-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-database"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Access</h6>
+                  <span class="tool-level">Intermedio</span>
+                </div>
+              </div>
+
+              <div class="tool-card visio-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Visio</h6>
+                  <span class="tool-level">Intermedio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría Desarrollo -->
+          <div class="software-category dev-category">
+            <div class="category-header">
+              <div class="category-icon dev-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Desarrollo</h3>
+            </div>
+            <div class="tools-grid">
+              <div class="tool-card vscode-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>VS Code</h6>
+                  <span class="tool-level">Avanzado</span>
+                </div>
+              </div>
+
+              <div class="tool-card java-tool">
+                <div class="tool-icon">
+                  <i class="fab fa-java"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Java</h6>
+                  <span class="tool-level">Intermedio</span>
+                </div>
+              </div>
+
+              <div class="tool-card python-tool">
+                <div class="tool-icon">
+                  <i class="fab fa-python"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Python</h6>
+                  <span class="tool-level">Intermedio</span>
+                </div>
+              </div>
+
+              <div class="tool-card html-tool">
+                <div class="tool-icon">
+                  <i class="fab fa-html5"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>HTML/CSS</h6>
+                  <span class="tool-level">Avanzado</span>
+                </div>
+              </div>
+
+              <div class="tool-card js-tool">
+                <div class="tool-icon">
+                  <i class="fab fa-js-square"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>JavaScript</h6>
+                  <span class="tool-level">Intermedio</span>
+                </div>
+              </div>
+
+              <div class="tool-card git-tool">
+                <div class="tool-icon">
+                  <i class="fab fa-git-alt"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Git/GitHub</h6>
+                  <span class="tool-level">Avanzado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Categoría Gestión de Proyectos -->
+          <div class="software-category management-category">
+            <div class="category-header">
+              <div class="category-icon management-icon">
+                <i class="fas fa-tasks"></i>
+              </div>
+              <h3>Gestión</h3>
+            </div>
+            <div class="tools-grid">
+              <div class="tool-card trello-tool">
+                <div class="tool-icon">
+                  <i class="fab fa-trello"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Trello</h6>
+                  <span class="tool-level">Avanzado</span>
+                </div>
+              </div>
+
+              <div class="tool-card jira-tool">
+                <div class="tool-icon">
+                  <i class="fab fa-jira"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Jira</h6>
+                  <span class="tool-level">Intermedio</span>
+                </div>
+              </div>
+
+              <div class="tool-card powerbi-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Power BI</h6>
+                  <span class="tool-level">Avanzado</span>
+                </div>
+              </div>
+
+              <div class="tool-card postman-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Postman</h6>
+                  <span class="tool-level">Intermedio</span>
+                </div>
+              </div>
+
+              <div class="tool-card eclipse-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-moon"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Eclipse</h6>
+                  <span class="tool-level">Intermedio</span>
+                </div>
+              </div>
+
+              <div class="tool-card auditbrain-tool">
+                <div class="tool-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div class="tool-info">
+                  <h6>Auditbrain</h6>
+                  <span class="tool-level">Avanzado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Microsoft Office Details Card -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="office-details-card">
+          <div class="details-header">
+            <div class="details-icon">📊</div>
+            <div class="details-title">
+              <h3>Microsoft Office</h3>
+            </div>
+          </div>
+          <div class="details-description">
+            Dominio avanzado de la suite Microsoft Office para análisis de datos, presentaciones y gestión documental.
+          </div>
+
+          <div class="details-section">
+            <h5><i class="fas fa-tools"></i> Herramientas</h5>
+            <ul>
+              <li><strong>Excel:</strong> Análisis de datos, dashboards, macros, fórmulas avanzadas</li>
+              <li><strong>Word:</strong> Documentación técnica, plantillas, formato avanzado</li>
+              <li><strong>PowerPoint:</strong> Presentaciones ejecutivas, diseño visual</li>
+              <li><strong>Outlook:</strong> Gestión de comunicaciones corporativas</li>
+              <li><strong>Access:</strong> Bases de datos relacionales, consultas SQL</li>
+              <li><strong>Visio:</strong> Diagramas de procesos, flujogramas</li>
+            </ul>
+          </div>
+
+          <div class="details-section">
+            <h5><i class="fas fa-chart-line"></i> Aplicaciones</h5>
+            <ul>
+              <li>Automatización de reportes financieros</li>
+              <li>Creación de dashboards interactivos</li>
+              <li>Gestión de bases de datos administrativas</li>
+              <li>Presentaciones de alto impacto</li>
+            </ul>
+          </div>
+
+          <div class="details-section">
+            <h5><i class="fas fa-star"></i> Nivel de Competencia</h5>
+            <div class="skills-tags">
+              <span class="skill-tag">Avanzado</span>
+              <span class="skill-tag">Certificado</span>
+              <span class="skill-tag">Experiencia Profesional</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Hobbies & Intereses</h2>
+
+        <div id="hobbiesCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+
+            <!-- Slide 1: Artes Marciales -->
+            <div class="carousel-item active">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="hobby-card">
+                    <div class="hobby-icon">
+                      <i class="fas fa-user-ninja"></i>
+                    </div>
+                    <div class="hobby-content">
+                      <h5 class="hobby-title">Judo</h5>
+                      <p class="hobby-badge">🥋 Cinturón Marrón</p>
+                      <p class="hobby-description">Disciplina, constancia y respeto. El judo me ha enseñado la importancia del equilibrio entre mente y cuerpo.</p>
+                      <div class="hobby-stats">
+                        <div class="stat-item">
+                          <span class="stat-number">8</span>
+                          <span class="stat-label">Años</span>
+                        </div>
+                        <div class="stat-item">
+                          <span class="stat-number">15+</span>
+                          <span class="stat-label">Competiciones</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="hobby-card">
+                    <div class="hobby-icon">
+                      <i class="fas fa-fist-raised"></i>
+                    </div>
+                    <div class="hobby-content">
+                      <h5 class="hobby-title">Brazilian Jiu-Jitsu</h5>
+                      <p class="hobby-badge">🥋 Cinturón Azul</p>
+                      <p class="hobby-description">Instructor NOGI, subcampeón AJP 2022-2024. La estrategia y la técnica sobre la fuerza bruta.</p>
+                      <div class="hobby-stats">
+                        <div class="stat-item">
+                          <span class="stat-number">6</span>
+                          <span class="stat-label">Años</span>
+                        </div>
+                        <div class="stat-item">
+                          <span class="stat-number">1°</span>
+                          <span class="stat-label">Subcampeón</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="hobby-card">
+                    <div class="hobby-icon">
+                      <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="hobby-content">
+                      <h5 class="hobby-title">Amor por los Animales</h5>
+                      <p class="hobby-badge">🐾 Protección</p>
+                      <p class="hobby-description">Participación activa en actividades de bienestar animal y rescate. Cada vida importa.</p>
+                      <div class="hobby-stats">
+                        <div class="stat-item">
+                          <span class="stat-number">50+</span>
+                          <span class="stat-label">Rescates</span>
+                        </div>
+                        <div class="stat-item">
+                          <span class="stat-number">5</span>
+                          <span class="stat-label">Años</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Actividades Intelectuales y Dinámicas -->
+            <div class="carousel-item">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="hobby-card">
+                    <div class="hobby-icon">
+                      <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="hobby-content">
+                      <h5 class="hobby-title">Lectura</h5>
+                      <p class="hobby-badge">📚 Conocimiento</p>
+                      <p class="hobby-description">Desarrollo personal, tecnología y filosofía oriental. La lectura expande horizontes.</p>
+                      <div class="hobby-stats">
+                        <div class="stat-item">
+                          <span class="stat-number">100+</span>
+                          <span class="stat-label">Libros</span>
+                        </div>
+                        <div class="stat-item">
+                          <span class="stat-number">3</span>
+                          <span class="stat-label">Géneros</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="hobby-card">
+                    <div class="hobby-icon">
+                      <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="hobby-content">
+                      <h5 class="hobby-title">Viajes</h5>
+                      <p class="hobby-badge">🌍 Exploración</p>
+                      <p class="hobby-description">Explorar nuevas culturas y experiencias. Cada viaje es una lección de vida.</p>
+                      <div class="hobby-stats">
+                        <div class="stat-item">
+                          <span class="stat-number">12</span>
+                          <span class="stat-label">Países</span>
+                        </div>
+                        <div class="stat-item">
+                          <span class="stat-number">25+</span>
+                          <span class="stat-label">Ciudades</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="hobby-card">
+                    <div class="hobby-icon">
+                      <i class="fas fa-music"></i>
+                    </div>
+                    <div class="hobby-content">
+                      <h5 class="hobby-title">Música & Deporte</h5>
+                      <p class="hobby-badge">🎶 Actividad</p>
+                      <p class="hobby-description">Rock clásico, jazz y entrenamiento funcional. La música y el movimiento mantienen el equilibrio.</p>
+                      <div class="hobby-stats">
+                        <div class="stat-item">
+                          <span class="stat-number">10+</span>
+                          <span class="stat-label">Años Música</span>
+                        </div>
+                        <div class="stat-item">
+                          <span class="stat-number">5</span>
+                          <span class="stat-label">Años Deporte</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Controles -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#hobbiesCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#hobbiesCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hobbiesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#hobbiesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-5">
+      <div class="container">
+        <h2 class="section-title text-center mb-5">Proyectos Relevantes</h2>
+
+        <!-- Project Categories Filter -->
+        <div class="project-filters text-center mb-4">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="tech">Tecnológicos</button>
+          <button class="filter-btn" data-filter="admin">Administrativos</button>
+          <button class="filter-btn" data-filter="logistics">Logísticos</button>
+          <button class="filter-btn" data-filter="social">Sociales</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Tech Projects -->
+          <div class="project-card tech" data-category="tech">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="project-category">Tecnológico</div>
+            </div>
+            <h4>Automatización en ASIC</h4>
+            <p>Desarrollo de herramienta que redujo el tiempo de ejecución en procesos internos en un 15%.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">15%</span>
+                <span class="metric-label">Reducción Tiempo</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">100+</span>
+                <span class="metric-label">Procesos Optimizados</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Automation</span>
+              <span class="tech-tag">Excel</span>
+            </div>
+          </div>
+
+          <div class="project-card tech" data-category="tech">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="project-category">Tecnológico</div>
+            </div>
+            <h4>Proyecto de Ciberseguridad en Azure</h4>
+            <p>Configuración de entornos seguros y monitoreo de accesos críticos.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">99.9%</span>
+                <span class="metric-label">Uptime</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">0</span>
+                <span class="metric-label">Incidentes</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">Security</span>
+              <span class="tech-tag">Monitoring</span>
+            </div>
+          </div>
+
+          <div class="project-card tech" data-category="tech">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="project-category">Tecnológico</div>
+            </div>
+            <h4>Gestión de datos en Redes Humanas</h4>
+            <p>Creación de reportes automatizados para la toma de decisiones en gestión de personal.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">500+</span>
+                <span class="metric-label">Reportes Generados</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">30%</span>
+                <span class="metric-label">Tiempo Ahorrado</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Power BI</span>
+              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">Excel</span>
+            </div>
+          </div>
+
+          <!-- Admin Projects -->
+          <div class="project-card admin" data-category="admin">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="project-category">Administrativo</div>
+            </div>
+            <h4>Estandarización documental en Fundación Pies Descalzos</h4>
+            <p>Mejora de la trazabilidad administrativa para más de 80 colaboradores.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">80+</span>
+                <span class="metric-label">Colaboradores</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">Trazabilidad</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Documentación</span>
+              <span class="tech-tag">Procesos</span>
+              <span class="tech-tag">Organización</span>
+            </div>
+          </div>
+
+          <div class="project-card admin" data-category="admin">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="project-category">Administrativo</div>
+            </div>
+            <h4>Fortalecimiento administrativo en ICBF</h4>
+            <p>Optimización de procesos de atención a usuarios y gestión documental.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">2000+</span>
+                <span class="metric-label">Usuarios Atendidos</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">25%</span>
+                <span class="metric-label">Eficiencia Mejorada</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Gestión</span>
+              <span class="tech-tag">Documental</span>
+              <span class="tech-tag">Procesos</span>
+            </div>
+          </div>
+
+          <!-- Logistics Projects -->
+          <div class="project-card logistics" data-category="logistics">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-truck"></i>
+              </div>
+              <div class="project-category">Logístico</div>
+            </div>
+            <h4>Proyecto logístico en Intelcost</h4>
+            <p>Implementación de indicadores que mejoraron trazabilidad y redujeron costos en un 12%.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">12%</span>
+                <span class="metric-label">Reducción Costos</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">Trazabilidad</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Logística</span>
+              <span class="tech-tag">Indicadores</span>
+              <span class="tech-tag">Optimización</span>
+            </div>
+          </div>
+
+          <div class="project-card logistics" data-category="logistics">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-route"></i>
+              </div>
+              <div class="project-category">Logístico</div>
+            </div>
+            <h4>Proyecto de mensajería en Centaurus</h4>
+            <p>Diseño de rutas urbanas eficientes para entrega de documentos y paquetes.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">50+</span>
+                <span class="metric-label">Rutas Optimizadas</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">20%</span>
+                <span class="metric-label">Tiempo Reducido</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Rutas</span>
+              <span class="tech-tag">Mensajería</span>
+              <span class="tech-tag">Eficiencia</span>
+            </div>
+          </div>
+
+          <div class="project-card logistics" data-category="logistics">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-bus"></i>
+              </div>
+              <div class="project-category">Logístico</div>
+            </div>
+            <h4>Optimización de ingresos en Expreso Bolivariano</h4>
+            <p>Automatización de registros contables y conciliación de valores.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">Automatización</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">0</span>
+                <span class="metric-label">Errores Manuales</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Contabilidad</span>
+              <span class="tech-tag">Automatización</span>
+              <span class="tech-tag">Finanzas</span>
+            </div>
+          </div>
+
+          <!-- Social Projects -->
+          <div class="project-card social" data-category="social">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-film"></i>
+              </div>
+              <div class="project-category">Social</div>
+            </div>
+            <h4>Producción en Catapulta</h4>
+            <p>Coordinación de eventos y campañas con control de inventarios y logística.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">15+</span>
+                <span class="metric-label">Eventos</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">100%</span>
+                <span class="metric-label">Éxito Logístico</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Eventos</span>
+              <span class="tech-tag">Logística</span>
+              <span class="tech-tag">Coordinación</span>
+            </div>
+          </div>
+
+          <div class="project-card social" data-category="social">
+            <div class="project-header">
+              <div class="project-icon">
+                <i class="fas fa-scale-balanced"></i>
+              </div>
+              <div class="project-category">Social</div>
+            </div>
+            <h4>Digitalización en Rama Judicial</h4>
+            <p>Modernización de archivos físicos y digitales.</p>
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-value">1000+</span>
+                <span class="metric-label">Archivos Digitalizados</span>
+              </div>
+              <div class="metric">
+                <span class="metric-value">50%</span>
+                <span class="metric-label">Tiempo Reducido</span>
+              </div>
+            </div>
+            <div class="project-tech">
+              <span class="tech-tag">Digitalización</span>
+              <span class="tech-tag">Archivos</span>
+              <span class="tech-tag">Modernización</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer" class="py-5 text-center bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="footer-brand mb-3">
+              <div class="brand-mark mx-auto mb-2"></div>
+              <h5 class="fw-bold">Alberto Cortés Palacios</h5>
+              <p class="text-muted small">Profesional en Administración · Software · Ciberseguridad</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h6 class="fw-bold mb-3">Contacto</h6>
+            <div class="contact-info">
+              <p class="mb-1"><i class="fas fa-envelope me-2 text-warning"></i>cortespalaciosalberto@gmail.com</p>
+              <p class="mb-1"><i class="fas fa-phone me-2 text-warning"></i>+57 300 123 4567</p>
+              <p class="mb-1"><i class="fas fa-map-marker-alt me-2 text-warning"></i>Bogotá D.C., Colombia</p>
+              <p class="mb-0"><i class="fas fa-globe me-2 text-warning"></i>Disponible para oportunidades</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <h6 class="fw-bold mb-3">Conecta conmigo</h6>
+            <div class="social-links">
+              <a href="#" class="btn btn-outline-warning btn-sm me-2 mb-2"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+              <a href="#" class="btn btn-outline-warning btn-sm me-2 mb-2"><i class="fab fa-github"></i> GitHub</a>
+              <a href="#" class="btn btn-outline-warning btn-sm me-2 mb-2"><i class="fab fa-twitter"></i> Twitter</a>
+              <a href="mailto:cortespalaciosalberto@gmail.com" class="btn btn-warning btn-sm mb-2"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <small class="text-muted">© 2025 Alberto Cortés Palacios. Todos los derechos reservados.</small>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <small class="text-muted">Hecho con <i class="fas fa-heart text-danger"></i> y Bootstrap</small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS (includes Popper) + GSAP briefly for micro-animations -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+      // small entry animations using GSAP
+      document.addEventListener('DOMContentLoaded', () => {
+        gsap.from('.hero-title', {y:30,opacity:0,duration:0.9,ease:'power3.out'});
+        gsap.from('.hero-sub', {y:18,opacity:0,duration:0.9,delay:0.15});
+        gsap.from('.btn-animated', {scale:0.96,opacity:0,stagger:0.08,delay:0.28});
+        gsap.utils.toArray('.section-title').forEach((el,i)=> gsap.from(el,{y:18,opacity:0,delay:0.12+i*0.08}));
+      });
+
+      });
+    </script>
+    <!-- Scripts externos y personalizados -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JavaScript: Componentes interactivos como navbar, modales, carruseles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- GSAP: Librería de animaciones para efectos suaves y profesionales -->
+    <script src="script.js"></script>
+    <!-- Script personalizado: Toda la lógica interactiva del portafolio -->
+  </body>
 </html>
