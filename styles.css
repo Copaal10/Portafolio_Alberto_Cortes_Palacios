@@ -1,4 +1,4 @@
-/* Portafolio - estilos avanzados para layout y animaciones (solo archivo local)
+/* Portafolio - estilos avanzados para layout y animaciones
    Este CSS complementa Bootstrap y contiene microestilos para una apariencia profesional.
    Comentarios en español para facilitar el aprendizaje de CSS.
 */
@@ -6,6 +6,7 @@
 /* Variables CSS globales - Definimos colores principales para mantener consistencia */
 :root{
   --accent: #ffd466; /* Color amarillo principal/acento */
+  --primary: #162022; /* Color oscuro principal */
   --muted: #6c6c6c; /* Color gris para texto secundario */
   --bg-soft: #f7f8fa; /* Color de fondo suave */
 }
@@ -17,7 +18,7 @@
 body{
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; /* Familia de fuentes moderna */
   background:var(--bg-soft); /* Color de fondo suave */
-  color:#162022 /* Color de texto principal */
+  color:var(--primary) /* Color de texto principal */
 }
 
 /* Logo/Marca - Elemento circular con gradiente para la inicial */
@@ -84,7 +85,9 @@ body{
 /* Small polish */
 footer{background:transparent}
 
-/* Timeline styles */
+/* =========================================
+   TIMELINE STYLES (Fusionados desde HTML)
+   ========================================= */
 .timeline {
   position: relative;
   width: 100%;
@@ -273,6 +276,79 @@ footer{background:transparent}
   animation-delay: 0.2s;
 }
 
+.details-description {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
+.details-subtitle {
+  font-size: 1rem;
+  color: #495057;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.details-section {
+  margin-bottom: 25px;
+}
+
+.details-section h5 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.details-section h5 i {
+  color: var(--accent);
+}
+
+.details-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.details-section li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.details-section li:last-child {
+  border-bottom: none;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, var(--accent), #ff9f1c);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 212, 102, 0.3);
+}
+
 /* Responsive timeline */
 @media (max-width: 768px) {
   .timeline-wrapper {
@@ -340,238 +416,7 @@ footer{background:transparent}
   }
 }
 
-/* Skills styles */
-.skills-wrapper,
-.software-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-}
-
-.skills-grid,
-.software-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.skill-item,
-.software-item {
-  position: relative;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.skill-item.active .skill-marker,
-.software-item.active .software-marker {
-  transform: scale(1.1);
-  box-shadow: 0 12px 30px rgba(255, 212, 102, 0.8);
-}
-
-.skill-item.selected .skill-marker,
-.software-item.selected .software-marker {
-  transform: scale(1.15);
-  box-shadow: 0 15px 35px rgba(255, 212, 102, 1);
-  border-color: var(--accent);
-}
-
-.skill-marker,
-.software-marker {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #ff9f1c);
-  border: 5px solid #fff;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  margin: 0 auto;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-.marker-category {
-  text-align: center;
-  color: white;
-  font-weight: 600;
-  padding: 8px;
-  font-size: 0.8rem;
-  line-height: 1.2;
-}
-
-/* Skills and Software Details Panel */
-.skills-details-panel,
-.software-details-panel {
-  position: sticky;
-  top: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  padding: 30px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  border: 1px solid rgba(255, 212, 102, 0.2);
-  min-height: 400px;
-}
-
-.skills-details-panel h3,
-.software-details-panel h3 {
-  color: var(--primary);
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.skills-details-panel .description,
-.software-details-panel .description {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.skills-details-panel .details-section,
-.software-details-panel .details-section {
-  margin-top: 20px;
-}
-
-.skills-details-panel .details-section h5,
-.software-details-panel .details-section h5 {
-  color: var(--primary);
-  margin-bottom: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.skills-details-panel li,
-.software-details-panel li {
-  color: #555;
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-
-.skills-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.skill-tag {
-  background: rgba(255, 212, 102, 0.1);
-  color: var(--accent);
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-}
-
-.skill-tag:hover {
-  background: var(--accent);
-  color: white;
-  transform: scale(1.05);
-}
-
-/* Responsive skills and software */
-@media (max-width: 768px) {
-  .skills-wrapper,
-  .software-wrapper {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .skills-grid,
-  .software-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .skill-marker,
-  .software-marker {
-    width: 100px;
-    height: 100px;
-  }
-
-  .marker-category {
-    font-size: 0.7rem;
-  }
-
-  .skills-details-panel,
-  .software-details-panel {
-    position: static;
-    padding: 20px;
-    min-height: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .skills-grid,
-  .software-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skill-marker,
-  .software-marker {
-    width: 80px;
-    height: 80px;
-  }
-
-  .marker-category {
-    font-size: 0.65rem;
-  }
-}
-
-/* Study cards styles */
-.study-card {
-  background: #fff;
-  border: none;
-  border-radius: 15px;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-.study-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), #ff9f1c);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.study-card:hover::before {
-  transform: scaleX(1);
-}
-
-.study-card:hover {
-  transform: translateY(-10px) rotate(1deg);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.study-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: block;
-  position: relative;
-}
-
-.study-icon i {
-  color: var(--accent);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  z-index: 2;
-}
-
-/* Animaciones específicas temáticas para cada icono */
-
-/* Diploma cards styles - Simplified but Elegant */
+/* Diploma cards styles */
 .diploma-card {
   background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 25%, #fafafa 50%, #f0f0f0 75%, #fafafa 100%);
   border: 4px solid #d4af37;
@@ -634,13 +479,8 @@ footer{background:transparent}
   font-weight: bold;
 }
 
-.diploma-ornament-left::before {
-  left: -3px;
-}
-
-.diploma-ornament-right::before {
-  right: -3px;
-}
+.diploma-ornament-left::before { left: -3px; }
+.diploma-ornament-right::before { right: -3px; }
 
 .diploma-ornament-center {
   flex: 1;
@@ -733,18 +573,6 @@ footer{background:transparent}
   position: relative;
 }
 
-.diploma-title::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-  z-index: -1;
-  border-radius: 3px;
-}
-
 .diploma-institution {
   font-size: 0.95rem;
   color: var(--accent);
@@ -761,19 +589,6 @@ footer{background:transparent}
     0 1px 2px rgba(0,0,0,0.1),
     0 0 8px rgba(212, 175, 55, 0.3);
   position: relative;
-}
-
-.diploma-year::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-  z-index: -1;
-  border-radius: 50%;
 }
 
 .diploma-type {
@@ -793,18 +608,6 @@ footer{background:transparent}
   position: relative;
 }
 
-.diploma-type::before {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
-  background: linear-gradient(135deg, #b8860b, #d4af37);
-  border-radius: 18px;
-  z-index: -1;
-}
-
 /* Hover effects mejorados */
 .diploma-card:hover {
   transform: translateY(-10px) scale(1.02);
@@ -812,117 +615,6 @@ footer{background:transparent}
     0 25px 50px rgba(0,0,0,0.2),
     inset 0 0 100px rgba(255,255,255,0.4),
     0 0 0 2px rgba(212, 175, 55, 0.3);
-}
-
-.diploma-card:hover .diploma-seal {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow:
-    0 8px 25px rgba(212, 175, 55, 0.5),
-    inset 0 2px 12px rgba(255,255,255,0.4),
-    0 0 0 4px rgba(212, 175, 55, 0.3);
-}
-
-.diploma-card:hover .diploma-title {
-  color: #d4af37;
-  text-shadow:
-    0 0 15px rgba(212, 175, 55, 0.6),
-    0 1px 3px rgba(0,0,0,0.1);
-}
-
-.diploma-card:hover .diploma-type {
-  transform: scale(1.05);
-  box-shadow:
-    0 4px 15px rgba(212, 175, 55, 0.4),
-    inset 0 1px 3px rgba(255, 255, 255, 0.3);
-}
-
-.diploma-card:hover .diploma-ornament-left,
-.diploma-card:hover .diploma-ornament-right {
-  width: 60px;
-  opacity: 0.9;
-  box-shadow: 0 3px 12px rgba(212, 175, 55, 0.4);
-}
-
-.diploma-card:hover .diploma-ornament-center {
-  box-shadow:
-    0 0 10px rgba(212, 175, 55, 0.4),
-    inset 0 1px 3px rgba(255, 255, 255, 0.4);
-}
-
-.diploma-card:hover .diploma-ornament-center::before {
-  text-shadow:
-    0 0 15px rgba(212, 175, 55, 1),
-    0 0 30px rgba(212, 175, 55, 0.6);
-}
-
-/* Animaciones de entrada mejoradas */
-.diploma-card:nth-child(1) {
-  animation: diplomaSlideInAuthentic 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.diploma-card:nth-child(2) {
-  animation: diplomaSlideInAuthentic 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s both;
-}
-
-.diploma-card:nth-child(3) {
-  animation: diplomaSlideInAuthentic 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s both;
-}
-
-@keyframes diplomaSlideInAuthentic {
-  from {
-    opacity: 0;
-    transform: translateY(100px) scale(0.9) rotateX(25deg) rotateY(10deg);
-    filter: blur(20px) brightness(0.8);
-  }
-  40% {
-    opacity: 0.6;
-    transform: translateY(-20px) scale(1.03) rotateX(-5deg) rotateY(-3deg);
-    filter: blur(8px) brightness(0.9);
-  }
-  70% {
-    opacity: 0.9;
-    transform: translateY(5px) scale(0.98) rotateX(2deg) rotateY(1deg);
-    filter: blur(3px) brightness(1.05);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1) rotateX(0deg) rotateY(0deg);
-    filter: blur(0) brightness(1);
-  }
-}
-
-/* Responsive adjustments for simplified diplomas */
-@media (max-width: 768px) {
-  .diploma-card {
-    padding: 2rem 1.5rem 2.5rem;
-    height: 380px; /* Altura ajustada para móviles */
-  }
-
-  .diploma-title {
-    font-size: 1.1rem;
-  }
-
-  .diploma-institution {
-    font-size: 0.9rem;
-  }
-
-  .diploma-year {
-    font-size: 1.2rem;
-  }
-
-  .diploma-seal {
-    width: 60px;
-    height: 60px;
-  }
-
-  .diploma-seal i {
-    font-size: 1.8rem;
-  }
-
-  .diploma-ornament-left,
-  .diploma-ornament-right {
-    width: 40px;
-  }
 }
 
 /* Certification cards styles */
@@ -963,24 +655,8 @@ footer{background:transparent}
   100% { background-position: 0% 50%; }
 }
 
-.certification-card::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 212, 102, 0.1), transparent);
-  transform: rotate(45deg) translate(-100%, -100%);
-  transition: transform 0.6s ease;
-}
-
 .certification-card:hover::before {
   transform: scaleX(1);
-}
-
-.certification-card:hover::after {
-  transform: rotate(45deg) translate(100%, 100%);
 }
 
 .certification-card:hover {
@@ -1042,79 +718,7 @@ footer{background:transparent}
   letter-spacing: 0.5px;
 }
 
-/* Carousel controls styling */
-#certificationsCarousel .carousel-control-prev,
-#certificationsCarousel .carousel-control-next {
-  width: 5%;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-#certificationsCarousel .carousel-control-prev:hover,
-#certificationsCarousel .carousel-control-next:hover {
-  opacity: 1;
-}
-
-#certificationsCarousel .carousel-control-prev-icon,
-#certificationsCarousel .carousel-control-next-icon {
-  background: linear-gradient(135deg, var(--accent), #ff9f1c);
-  border-radius: 50%;
-  padding: 15px;
-  box-shadow: 0 4px 15px rgba(255, 212, 102, 0.3);
-  transition: all 0.3s ease;
-}
-
-#certificationsCarousel .carousel-control-prev-icon:hover,
-#certificationsCarousel .carousel-control-next-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(255, 212, 102, 0.4);
-}
-
-#certificationsCarousel .carousel-indicators {
-  bottom: -50px;
-}
-
-#certificationsCarousel .carousel-indicators button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #ff9f1c);
-  border: none;
-  margin: 0 5px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(255, 212, 102, 0.2);
-}
-
-#certificationsCarousel .carousel-indicators button.active {
-  transform: scale(1.3);
-  box-shadow: 0 4px 12px rgba(255, 212, 102, 0.4);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .certification-card {
-    height: 180px;
-    padding: 15px 10px;
-  }
-
-  .certification-icon i {
-    font-size: 2rem;
-  }
-
-  .certification-content h5 {
-    font-size: 0.9rem;
-  }
-
-  .certification-institution {
-    font-size: 0.75rem;
-  }
-
-  .certification-period {
-    font-size: 0.7rem;
-  }
-}
-
-/* Hobby cards styles - Similar to certification cards */
+/* Hobby cards styles */
 .hobby-card {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border: 2px solid transparent;
@@ -1146,24 +750,8 @@ footer{background:transparent}
   transition: transform 0.4s ease;
 }
 
-.hobby-card::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 212, 102, 0.1), transparent);
-  transform: rotate(45deg) translate(-100%, -100%);
-  transition: transform 0.6s ease;
-}
-
 .hobby-card:hover::before {
   transform: scaleX(1);
-}
-
-.hobby-card:hover::after {
-  transform: rotate(45deg) translate(100%, 100%);
 }
 
 .hobby-card:hover {
@@ -1233,10 +821,6 @@ footer{background:transparent}
   z-index: 2;
 }
 
-.hobby-stats .stat-item {
-  text-align: center;
-}
-
 .hobby-stats .stat-number {
   display: block;
   font-size: 1.2rem;
@@ -1249,86 +833,6 @@ footer{background:transparent}
   color: #6c757d;
   font-weight: 500;
   margin-top: 2px;
-}
-
-/* Hobbies Carousel controls styling */
-#hobbiesCarousel .carousel-control-prev,
-#hobbiesCarousel .carousel-control-next {
-  width: 5%;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-#hobbiesCarousel .carousel-control-prev:hover,
-#hobbiesCarousel .carousel-control-next:hover {
-  opacity: 1;
-}
-
-#hobbiesCarousel .carousel-control-prev-icon,
-#hobbiesCarousel .carousel-control-next-icon {
-  background: linear-gradient(135deg, var(--accent), #ff9f1c);
-  border-radius: 50%;
-  padding: 15px;
-  box-shadow: 0 4px 15px rgba(255, 212, 102, 0.3);
-  transition: all 0.3s ease;
-}
-
-#hobbiesCarousel .carousel-control-prev-icon:hover,
-#hobbiesCarousel .carousel-control-next-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(255, 212, 102, 0.4);
-}
-
-#hobbiesCarousel .carousel-indicators {
-  bottom: -50px;
-}
-
-#hobbiesCarousel .carousel-indicators button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), #ff9f1c);
-  border: none;
-  margin: 0 5px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(255, 212, 102, 0.2);
-}
-
-#hobbiesCarousel .carousel-indicators button.active {
-  transform: scale(1.3);
-  box-shadow: 0 4px 12px rgba(255, 212, 102, 0.4);
-}
-
-/* Responsive adjustments for hobby cards */
-@media (max-width: 768px) {
-  .hobby-card {
-    height: 240px;
-    padding: 15px 10px;
-  }
-
-  .hobby-icon i {
-    font-size: 2rem;
-  }
-
-  .hobby-content h5 {
-    font-size: 0.9rem;
-  }
-
-  .hobby-badge {
-    font-size: 0.75rem;
-  }
-
-  .hobby-description {
-    font-size: 0.8rem;
-  }
-
-  .hobby-stats .stat-number {
-    font-size: 1rem;
-  }
-
-  .hobby-stats .stat-label {
-    font-size: 0.65rem;
-  }
 }
 
 /* Skills Cards Styles */
@@ -1444,63 +948,197 @@ footer{background:transparent}
   transform: scale(1.05);
 }
 
-/* Responsive skills cards */
-@media (max-width: 768px) {
-  .skills-cards-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .skill-card-large {
-    margin-bottom: 20px;
-  }
-
-  .skill-card-header {
-    padding: 20px;
-  }
-
-  .skill-card-icon {
-    font-size: 2.5rem;
-  }
-
-  .skill-card-header h3 {
-    font-size: 1.3rem;
-  }
-
-  .skill-card-content {
-    padding: 20px;
-  }
-
-  .skill-categories {
-    gap: 20px;
-  }
+/* Software and Tools Section Styles */
+.software-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-@media (max-width: 480px) {
-  .skill-card-header {
-    padding: 15px;
-  }
+.software-category {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
 
-  .skill-card-icon {
-    font-size: 2rem;
-  }
+.software-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 212, 102, 0.2);
+  border-color: var(--accent);
+}
 
-  .skill-card-header h3 {
-    font-size: 1.1rem;
-  }
+.category-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-  .skill-card-content {
-    padding: 15px;
-  }
+.category-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
 
-  .tools-list {
-    gap: 8px;
-  }
+.office-icon {
+  background: linear-gradient(135deg, #0078d4, #005a9e);
+  color: white;
+}
 
-  .tool-item {
-    font-size: 0.8rem;
-    padding: 4px 8px;
-  }
+.dev-icon {
+  background: linear-gradient(135deg, #239120, #1a6b16);
+  color: white;
+}
+
+.management-icon {
+  background: linear-gradient(135deg, #ff6b35, #e55a2b);
+  color: white;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.tool-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  padding: 20px 15px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), #ff9f1c);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tool-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tool-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(255, 212, 102, 0.3);
+  border-color: rgba(255, 212, 102, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #fff8e1 100%);
+}
+
+.tool-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.tool-card:hover .tool-icon {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 4px 8px rgba(255, 212, 102, 0.4));
+}
+
+/* Real brand colors for tool icons */
+.tool-card.excel-tool .tool-icon { color: #217346; } /* Excel green */
+.tool-card.word-tool .tool-icon { color: #2b579a; } /* Word blue */
+.tool-card.powerpoint-tool .tool-icon { color: #d24726; } /* PowerPoint orange */
+.tool-card.outlook-tool .tool-icon { color: #0078d4; } /* Outlook blue */
+.tool-card.access-tool .tool-icon { color: #a4373a; } /* Access red */
+.tool-card.visio-tool .tool-icon { color: #3955a3; } /* Visio blue */
+
+.tool-card.vscode-tool .tool-icon { color: #007acc; } /* VS Code blue */
+.tool-card.java-tool .tool-icon { color: #ed8b00; } /* Java orange */
+.tool-card.python-tool .tool-icon { color: #3776ab; } /* Python blue */
+.tool-card.html-tool .tool-icon { color: #e34f26; } /* HTML orange */
+.tool-card.js-tool .tool-icon { color: #f7df1e; } /* JavaScript yellow */
+.tool-card.git-tool .tool-icon { color: #f05032; } /* Git orange */
+
+.tool-card.trello-tool .tool-icon { color: #0079bf; } /* Trello blue */
+.tool-card.jira-tool .tool-icon { color: #0052cc; } /* Jira blue */
+.tool-card.powerbi-tool .tool-icon { color: #f2c811; } /* Power BI yellow */
+.tool-card.postman-tool .tool-icon { color: #ff6c37; } /* Postman orange */
+.tool-card.eclipse-tool .tool-icon { color: #2c2255; } /* Eclipse purple */
+.tool-card.auditbrain-tool .tool-icon { color: #6b46c1; } /* Auditbrain purple */
+
+.tool-info h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.tool-level {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: rgba(255, 212, 102, 0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* Microsoft Office Details Card */
+.office-details-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.office-details-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-color: var(--accent);
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.details-icon {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, var(--accent), #ff9f1c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.details-title h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.details-description {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-weight: bold;
 }
 
 /* Projects Section Styles */
@@ -1723,363 +1361,6 @@ footer{background:transparent}
   to {
     opacity: 1;
     transform: scale(1) translateY(0);
-  }
-}
-
-/* Responsive projects */
-@media (max-width: 768px) {
-  .project-filters {
-    gap: 10px;
-  }
-
-  .filter-btn {
-    padding: 8px 16px;
-    font-size: 0.8rem;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .project-card {
-    padding: 20px;
-  }
-
-  .project-header {
-    gap: 10px;
-  }
-
-  .project-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-
-  .project-card h4 {
-    font-size: 1.1rem;
-  }
-
-  .project-metrics {
-    gap: 15px;
-  }
-
-  .metric-value {
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-filters {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .filter-btn {
-    width: 200px;
-  }
-
-  .project-metrics {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .metric {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-  }
-
-  .metric-value {
-    margin-bottom: 0;
-  }
-}
-
-/* Software and Tools Section Styles */
-.software-showcase {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.software-category {
-  background: white;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.software-category:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(255, 212, 102, 0.2);
-  border-color: var(--accent);
-}
-
-.category-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.category-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 15px;
-  font-size: 2rem;
-  transition: all 0.3s ease;
-}
-
-.office-icon {
-  background: linear-gradient(135deg, #0078d4, #005a9e);
-  color: white;
-}
-
-.dev-icon {
-  background: linear-gradient(135deg, #239120, #1a6b16);
-  color: white;
-}
-
-.management-icon {
-  background: linear-gradient(135deg, #ff6b35, #e55a2b);
-  color: white;
-}
-
-.category-icon:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-}
-
-.tool-card {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 15px;
-  padding: 20px 15px;
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border: 2px solid transparent;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.tool-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), #ff9f1c);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.tool-card:hover::before {
-  transform: scaleX(1);
-}
-
-.tool-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(255, 212, 102, 0.3);
-  border-color: rgba(255, 212, 102, 0.3);
-  background: linear-gradient(135deg, #ffffff 0%, #fff8e1 100%);
-}
-
-.tool-icon {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  transition: all 0.3s ease;
-  display: block;
-}
-
-.tool-card:hover .tool-icon {
-  transform: scale(1.2) rotate(5deg);
-  filter: drop-shadow(0 4px 8px rgba(255, 212, 102, 0.4));
-}
-
-/* Real brand colors for tool icons */
-.tool-card.excel-tool .tool-icon { color: #217346; } /* Excel green */
-.tool-card.word-tool .tool-icon { color: #2b579a; } /* Word blue */
-.tool-card.powerpoint-tool .tool-icon { color: #d24726; } /* PowerPoint orange */
-.tool-card.outlook-tool .tool-icon { color: #0078d4; } /* Outlook blue */
-.tool-card.access-tool .tool-icon { color: #a4373a; } /* Access red */
-.tool-card.visio-tool .tool-icon { color: #3955a3; } /* Visio blue */
-
-.tool-card.vscode-tool .tool-icon { color: #007acc; } /* VS Code blue */
-.tool-card.java-tool .tool-icon { color: #ed8b00; } /* Java orange */
-.tool-card.python-tool .tool-icon { color: #3776ab; } /* Python blue */
-.tool-card.html-tool .tool-icon { color: #e34f26; } /* HTML orange */
-.tool-card.js-tool .tool-icon { color: #f7df1e; } /* JavaScript yellow */
-.tool-card.git-tool .tool-icon { color: #f05032; } /* Git orange */
-
-.tool-card.trello-tool .tool-icon { color: #0079bf; } /* Trello blue */
-.tool-card.jira-tool .tool-icon { color: #0052cc; } /* Jira blue */
-.tool-card.powerbi-tool .tool-icon { color: #f2c811; } /* Power BI yellow */
-.tool-card.postman-tool .tool-icon { color: #ff6c37; } /* Postman orange */
-.tool-card.eclipse-tool .tool-icon { color: #2c2255; } /* Eclipse purple */
-.tool-card.auditbrain-tool .tool-icon { color: #6b46c1; } /* Auditbrain purple */
-
-.tool-info h6 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin-bottom: 5px;
-}
-
-.tool-level {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--accent);
-  background: rgba(255, 212, 102, 0.1);
-  padding: 2px 8px;
-  border-radius: 10px;
-  display: inline-block;
-}
-
-/* Microsoft Office Details Card */
-.office-details-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-  border-radius: 20px;
-  padding: 30px;
-  margin-top: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-
-.office-details-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  border-color: var(--accent);
-}
-
-.details-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  gap: 15px;
-}
-
-.details-icon {
-  font-size: 2.5rem;
-  background: linear-gradient(135deg, var(--accent), #ff9f1c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.details-title h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #2c3e50;
-  margin: 0;
-}
-
-.details-description {
-  font-size: 1.1rem;
-  color: #6c757d;
-  margin-bottom: 25px;
-  line-height: 1.6;
-  font-weight: bold;
-}
-
-.details-subtitle {
-  font-size: 1rem;
-  color: #495057;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-.details-section {
-  margin-bottom: 25px;
-}
-
-.details-section h5 {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #2c3e50;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.details-section h5 i {
-  color: var(--accent);
-}
-
-.details-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.details-section li {
-  padding: 8px 0;
-  border-bottom: 1px solid #e9ecef;
-  color: #495057;
-  line-height: 1.5;
-  font-weight: bold;
-}
-
-.details-section li:last-child {
-  border-bottom: none;
-}
-
-.skills-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skill-tag {
-  background: linear-gradient(135deg, var(--accent), #ff9f1c);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(255, 212, 102, 0.3);
-}
-
-/* Responsive for Office Details Card */
-@media (max-width: 768px) {
-  .office-details-card {
-    padding: 20px;
-  }
-
-  .details-header {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .details-title h3 {
-    font-size: 1.5rem;
-  }
-
-  .details-description {
-    font-size: 1rem;
-  }
-
-  .skills-tags {
-    justify-content: center;
   }
 }
 
